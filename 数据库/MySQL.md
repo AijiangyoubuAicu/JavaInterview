@@ -1,9 +1,5 @@
 # MySQL数据库
 
-<span id="top">top</span>
-
-[TOC]
-
 ------
 
 ## 1. 什么是数据库？
