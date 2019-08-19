@@ -1,4 +1,4 @@
-#HashSet集合介绍
+# HashSet集合介绍
 
 java.util.HashSet是Set接口的一个实现类，它所存储的元素是不可重复的，并且
 元素都是无序的(即存取顺序不一致)；
