@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/6.集合/design_patterns/iterable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/集合/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1.数据类型/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/集合/2.集合Collection/List/java/arrayList/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/集合/2.集合Collection/List/java/linkedList/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/List/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/iterator/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/Set/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/3.映射表Map/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/0Java基本常识/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1变量与数据类型/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/泛型/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/异常处理/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/1.运算符/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/3.方法/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/2.控制流程/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/4.Math数学运算类/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/5.BigDecimal精度运算类/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/3面向对象/java" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
