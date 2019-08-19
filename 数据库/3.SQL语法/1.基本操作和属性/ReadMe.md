@@ -1,5 +1,3 @@
-#基本操作
-
 # Windows服务
 
 - 启动MySQL
