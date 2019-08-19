@@ -16,17 +16,17 @@ JavaInterview是用来复习Java基础知识点，该项目包含了Java、数�
 
 - [JavaSE](JavaSE/0Java基本常识/ReadMe.md)
 
-		- 二进制
-		- 字节
-		- Java虚拟机的--JVM
-		- JRE和JDK
-		- 编写第一个程序HelloWorld
-		- Java的doc命令
-		- 编译与运行
-		- 关于main()方法
-		- 添加注释
-		- 关键字keywords
-		- 标识符
+	- 二进制
+	- 字节
+	- Java虚拟机的--JVM
+	- JRE和JDK
+	- 编写第一个程序HelloWorld
+	- Java的doc命令
+	- 编译与运行
+	- 关于main()方法
+	- 添加注释
+	- 关键字keywords
+	- 标识符
 		
 - [变量与数据类型](JavaSE/1变量与数据类型/ReadMe.md)
 
