@@ -1,4 +1,4 @@
-##HashSet集合介绍
+#HashSet集合介绍
 
 java.util.HashSet是Set接口的一个实现类，它所存储的元素是不可重复的，并且
 元素都是无序的(即存取顺序不一致)；
@@ -17,7 +17,7 @@ Set接口的特点：
 
 [Set接口实现HashSet类的使用.java](./Set/java/Demo01_Set.java)
 
-## 哈希码值
+# 哈希码值
 哈希值：是一个十进制的整数，由系统随机给出(就是对象的地址值，是一个逻辑地址，是模拟出来得到的地址，不是数据实际存储的物理地址)在Object类中
 
 有一个方法，可以获取对象的哈希码值
@@ -31,7 +31,7 @@ hashCode()方法的源码：
     
 [hashCode的测试.java](./Set/java/Demo01_HashCode.java)
 
-## HashSet集合存储数据的结构(哈希表)
+# HashSet集合存储数据的结构(哈希表)
 
 哈希表：在JDK1.8之前，哈希表底层采用了“数组+链表”组成，即使用链表处理冲突，同一hash值的链表都存储在
 一个链表里。但是当一个集合的元素较多时，即hash值相等的元素较多时，通过key值依次查找的效率较低，而JDK1.8中
@@ -53,14 +53,14 @@ hashCode()方法的源码：
 
 ![](../img/05_HashSet集合存储数据的结构（哈希表）.bmp)
 
-## HashSet存储自定义类型的元素
+# HashSet存储自定义类型的元素
 
 给HashSet中存放自定义类型元素时，需要重写对象中hashCode()和equals()方法，建立自己比较方式，
 才能保证HashSet集合中的对象唯一性；
 
 [自定义类是否重写hashCode()和equals()方法的比较.java](./Set/java/Demo03_Set.java)
 
-## LinkedHashSet
+# LinkedHashSet
 
 我们知道HashSet保证了元素的唯一性，可是元素存放进去是没有顺序的，那么我们要保证有序，该怎么办？
 在HashSet下面有一个子类java.util.LinkedHashSet，它是链表和哈希表组合的一个数据存储结构
