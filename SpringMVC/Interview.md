@@ -8,6 +8,7 @@
 - @Controller 注解
 - @RequestMapping 注解
 - Spring MVC 的流程
+- SpringMVC的优点
 
 ## 什么是MVC模式？
 
@@ -70,4 +71,8 @@ DispatcherServlet。
 7. 视图解析器（ViewReslover）解析后返回具体的视图页面。
 8. DispatcherServlet 将数据模型传入视图页面，调用视图页面对浏览器生成响应。
 
-
+## Spring MVC的优点？
+1. 可以支持各种视图技术，而不仅仅局限于JSP
+2. 与Spring框架集成（如IOC容器，AOP等）
+3. 清晰的角色分配：前端控制器（DispatcherServlet），处理器映射器（HandlerMapping），处理器适配器（HandlerAdapter），视图解析器（ViewResolver）
+4. 支持各种请求支援的映射策略
