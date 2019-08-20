@@ -31,9 +31,45 @@
 
 ## JavaEE
 
+- [JavaEE概述](JavaEE/src/main/directory/JavaEE概述/Interview.md)
+	- Java Web 通常包含哪些常用的技术规范（组件）？
+	- HTTP 请求的 GET 和 POST 的区别？
+
+- [XML](JavaEE/src/main/directory/XML/Interview.md)
+
+- [Servlet](JavaEE/src/main/directory/Servlet/Interview.md)
+	- 什么是Servlet
+	- Servlet的优点
+	- Servlet执行流程
+	- 转发(Forward)和重定向(Redirect)的区别
+	
+- [JDBC 数据库连接](JavaEE/src/main/directory/JDBC与数据库连接池/Interview.md)
+	
+	
+- [Cookie与Session 会话层](JavaEE/src/main/directory/Cookie与Session/Interview.md)
+	- Servlet 的会话机制？
+	- cookie 和 session 的作用、区别、应用范围？
+
+- [JSP与 JSTL](JavaEE/src/main/directory/JSP/Interview.md)
+	- JSP 是什么？有什么特点？
+	- JSP 页面包含哪些语法？它们具有什么特征？
+	- JSP 的编译指令有哪些？
+	- JSP 中动态 include 与静态 include 的区别？
+	- JSP 有哪些动作指令？分别是什么？
+	- JSP 有哪些内置对象？作用分别是什么？
+	- JSP 和 Servlet 有哪些相同点和不同点？
+	- JSTL 是什么？优点有哪些？
+	- 如何避免 JSP 页面自动生成 session 对象？为什么要这么做？
+	- EL 表达式的功能？为什么要用 EL 表达式？
+	
+- [Filter与Listener](JavaEE/src/main/directory/Filter与Listener/Interview.md)
+	- Filter 是什么？有什么作用？
+	- Listener 是什么？有什么作用？
+	
 ## Spring
 
 - [Spring面试题](Spring/Interview.md)
+
 	- 什么是 Spring？
 	- Spring 有哪些优点？
 	- Spring 框架中都用到了哪些设计模式？
@@ -46,11 +82,32 @@
 	- 有哪些不同类型的依赖注入（IoC）？
 	- 什么是 Bean wiring（Bean 装配）？
 	- 什么是 Bean 自动装配？解释各种自动装配模式
+	- @Required 注解？
+	- @Autowired 注解？
+	- @Qualifier 注解？
 	- 自动装配有哪些局限性？
 	- 什么是 AOP？
+	- 什么是目标对象？
+	- 什么是代理？
+	- Spring 的 AOP 代理有什么实现方式？
 	- Spring 中 AOP 的应用场景、AOP 原理、好处？
+	- 介绍 Spring 支持的 5 种 Advice（增强处理）
+	- 引入（Introduction）和织入（Weaving）的区别？
+	- Spring 支持哪些 ORM？
+	- Spring 的事务管理有哪些优点？
+	- Spring 支持的事务管理类型？
 
 ## SpringMVC
+
+- [SpringMVC面试题](SpringMVC/Interview.md)
+	- 什么是MVC模式？
+	- 什么是 Spring MVC 框架？
+	- 什么是 DispatcherServlet ？
+	- 什么是 Spring MVC 框架的控制器？
+	- 什么是 WebApplicationContext？
+	- @Controller 注解
+	- @RequestMapping 注解
+	- Spring MVC 的流程
 
 ## Mybatis
 

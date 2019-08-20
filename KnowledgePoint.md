@@ -97,12 +97,14 @@
 
 ## Web前端
 
-	- HTML
-	- CSS
-	- JS
-	- JQ
-	- Ajax
-	- Bootstrap
+- HTML 超文本标记语言
+- CSS 层叠样式表
+- JavaScript 直译式脚本语言
+- JQuery JS库
+- Json JS对象简谱
+- Ajax 异步JS与XML
+- Bootstrap CSS库
+- Vue	进式框架
 	
 ## 数据库
 
@@ -114,12 +116,14 @@
 ## JavaEE
 
 - [大纲纲要](JavaEE)
-
-	- Servlet
-	- Cookie与Session会话层
-	- JDBC数据库连接
-	- JSP
+	
 	- XML
+	- Servlet
+	- JDBC 数据库连接
+	- - Cookie与Session 会话层
+	- JSP与 JSTL
+	- Filter 过滤器
+	- Listener 监听器
 
 ## SSM
 - [Spring框架](Spring/ReadMe.md)

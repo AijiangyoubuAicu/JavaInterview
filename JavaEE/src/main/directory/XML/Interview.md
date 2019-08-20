@@ -1,10 +1,3 @@
-# Servlet 面试题汇总
-
-- 什么是Servlet
-- Servlet的优点
-- Servlet执行流程
-- 转发(Forward)和重定向(Redirect)的区别
-
 ## 什么是Servlet
 
 Servlet 是采用Java语言编写的服务端程序，它可以运行于Web服务器中的Servlet容器中；
@@ -55,7 +48,22 @@ Servlet 是采用Java语言编写的服务端程序，它可以运行于Web服�
 - 从效率来说：
 	- forWard：高
 	- redirect：低
-			
+
+## ServletConfig 对象和 ServletContext 对象有什么区别？
+
+一个 Servlet 对应有一个 ServletConfig 对象，可以用来读取该 Servlet 的配置参数
+
+一个 Web App 对应一个 ServletContext 对象，因此 ServletContext 代表的整个 Web 应用，比如需要读取整个 Web 应用的配置参数，
+访问 application 范围的属性，都使用 ServletContext。
+
+实际上，application 内置对象就是 ServletContext 的实例
+
+ServletContext 对象可以通过 context.getResourceAsStream("/images/tomcat.gif"); 或者context.getRealPath("/")去获取 webapp 的资源文件。
+
+ServletContext 对象的setAttribute(String name,Object o)方法可以将对象存储在Context 作用范围域又称为全局作用范围域，在整个 web 应用当中可以共享。
+
+ServletContext 对象可以和服务器进行通讯，比如写信息到服务器的日志信息当中。
+
 			
 			
 				

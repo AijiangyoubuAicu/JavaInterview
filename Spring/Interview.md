@@ -1,3 +1,32 @@
+## Spring 面试题汇总
+
+- 什么是 Spring？
+- Spring 有哪些优点？
+- Spring 框架中都用到了哪些设计模式？
+- 什么是 Spring Bean？
+- Spring 框架中单例 Bean 是线程安全的吗？
+- Spring 中的依赖注入是什么？
+- Spring IoC 容器是什么？IoC 有什么优点？
+- Bean Factory 和 ApplicationContext 有什么区别？
+- IoC 和 DI 的区别？
+- 有哪些不同类型的依赖注入（IoC）？
+- 什么是 Bean wiring（Bean 装配）？
+- 什么是 Bean 自动装配？解释各种自动装配模式
+- @Required 注解？
+- @Autowired 注解？
+- @Qualifier 注解？
+- 自动装配有哪些局限性？
+- 什么是 AOP？
+- 什么是目标对象？
+- 什么是代理？
+- Spring 的 AOP 代理有什么实现方式？
+- Spring 中 AOP 的应用场景、AOP 原理、好处？
+- 介绍 Spring 支持的 5 种 Advice（增强处理）
+- 引入（Introduction）和织入（Weaving）的区别？
+- Spring 支持哪些 ORM？
+- Spring 的事务管理有哪些优点？
+- Spring 支持的事务管理类型？
+
 ## 什么是 Spring？
 
 Spring 是一个`轻量级的`、`非侵入性的`开源框架，最重要的核心概念是`IoC`和`AOP`。以此为基础，Spring
@@ -130,7 +159,20 @@ IOC 或依赖注入减少了应用程序的代码量。它使得应用程序的�
 
 4. constructor：与 byType 类似，区别是用于自动匹配构造器的参数。如果容器不能恰好找到一个与构造器参数类型匹配的 Bean，则会抛出一个异常。
 
-5. autodetect：Spring 容器根据 Bean 内部结构，自行决定使用 constructor 或 byType 策略。如果找到一个默认的构造函数，那么就会应用 byType 策略。
+5. autodetect：Spring 容器根据 Bean 内部结构，自行决定使用 constructor 或 byType 策略。如果找到一个默认的构造函数，那么就会应用 byType 策略
+
+## @Required 注解？
+@Required 表明 Bean 的属性必须在配置时设置，为了避免开发者的疏忽，可以让 Spring 在创建容器
+时就执行检查，此时需要为 setter 方法添加@Required 修饰，此时 Spring 会检查该 setter 方法：
+
+如果开发者既没有显式通过<property.../>配置依赖注入；也没有使用自动装配执行依赖注入，Spring 容器会报异常：BeanInitializationException
+
+## @Autowired 注解？
+Spring 提供了@Autowired 注解来指定自动装配，@Autowired 可以修饰 setter 方法、普通方法、实例
+变量和构造器等。当使用@Autowired 标注 setter 方法时，默认采用 byType 自动装配策略。
+
+## @Qualifier 注解？
+为了实现精确的自动装配，Spring 提供了@Qualifier 注解，通过使用@Qualifier，允许根据 Bean 的 id来执行自动装配
 
 ## 自动装配有哪些局限性？
 
@@ -138,7 +180,7 @@ IOC 或依赖注入减少了应用程序的代码量。它使得应用程序的�
 1. 自动装配不支持标量类型：如果属性类型是 8 个基本类型及其包装类、String 类型，自动装配都不
 能工作。
 2. 模糊特性：自动装配不如显式指定依赖精确。
-可见：自动装配可以减少配置文件的工作量，但降低了依赖关系的透明性和清晰性。
+可见：自动装配可以减少配置文件的工作量，但降低了依赖关系的透明性和清晰性
 
 ## 什么是 AOP？
 AOP 为 Aspect Oriented Programming 的缩写，意为：`面向切面编程（也叫面向方面）`，可以通过`预编
@@ -150,7 +192,26 @@ AOP 是目前软件开发中的一个热点，也是 Spring 框架中的一个�
 AOP 是 OOP 的延续，主要的功能是：日志记录，性能统计，安全控制，事务处理，异常处理等等在 Spring 中提供了 AOP 的丰富支持，
 允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。
 应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其他的系统级关注点，例如日志或事务支持。
-  
+ 
+## 什么是目标对象？
+目标对象就是还没有被 AOP 框架所修改、增加的对象。目标对象将会被 AOP 框架进行修改、增强处
+理，因此也被称为“被增强的对象”。如果 AOP 框架采用的是动态 AOP 实现，那么该对象就是一个被代理的对象。
+
+## 什么是代理？
+代理就是 AOP 框架所创建的对象，简单地说，代理就是对目标对象的加强。Spring 中的 AOP 代理可
+以是 `JDK 动态代理`，也可以是` CGLIB 代理`。前者为实现接口的目标对象的代理，后者为不实现接口的目标对象的代理。
+
+## Spring 的 AOP 代理有什么实现方式？
+
+Spring AOP 代理有两种实现方式：
+
+- 若目标对象实现了若干接口，Spring 使用 JDK 的 java.lang.reflect.Proxy 类代理。
+	- 优点：因为有接口，所以使系统更加松耦合。
+	- 缺点：为每一个目标类创建接口。
+- 若目标对象没有实现任何接口，Spring 使用 CGLIB 库生成目标对象的子类。
+	- 优点：因为代理类与目标类是继承关系，所以不需要有接口的存在。
+	- 缺点：因为没有使用接口，所以系统的解耦不如使用 JDK 的动态代理好。
+
 ## Spring 中 AOP 的应用场景、AOP 原理、好处？
 
 AOP 专门用于处理系统中分布于各个模块（不同方法）中的交叉关注点的问题，在 Java EE 应用中，
@@ -170,3 +231,49 @@ AOP 编程的优点：
 1. 各步骤之间的良好隔离性，大大降低耦合度。
 
 2. 源代码无关性，为项目扩展新功能时不需要修改源代码。
+
+## 介绍 Spring 支持的 5 种 Advice（增强处理）
+
+Spring 可以支持以下五种类型的 Advice：
+
+- before Advice（前置增强处理）：在目标方法执行之前织入的 Advice。
+- after Advice（最终增强处理）：在目标方法执行结束后（不论是正常返回还是异常退出）织入的Advice。
+- after-returning Advice（后置增强处理）：在目标方法正常完成之后织入的 Advice。
+- after-throwing Advice（异常增强处理）：在目标方法由于未捕获异常结束之后织入的 Advice。
+- around Advice（环绕增强处理）：在目标方法执行前后都织入的 Advice。
+
+## 引入（Introduction）和织入（Weaving）的区别？
+
+引入和织入都是 AOP 框架对目标对象的修改方式。
+
+- `引入`指的是为被处理的类添加方法或字段，Spring 允许将新的接口引入到任何被处理的对象。
+- `织入`指的是将 Advice 添加到目标对象中，并创建一个被增强的对象（AOP 代理）的过程。织入有两
+种实现方式——编译时增强（如 AspectJ）和运行时增强（如 Spring AOP）。Spring 和其他纯 Java AOP
+框架一样，在运行时完成织入。
+
+## Spring 支持哪些 ORM？
+
+现在 Spring 主要支持 Hibernate 和 JPA 这两种持久化技术。
+但实际上由于 Spring 现在已经是 Java EE 领域最流行的框架，因此基本上所有的 ORM 技术都可以与Spring 整合。
+
+## Spring 的事务管理有哪些优点？
+
+- 为不同的事务 API（如 JTA、JDBC、Hibernate、JPA）提供了统一的编程模型
+- 支持声明式事务管理
+- 为编程式事务提供了简化的、统一的编程 API
+- 可以和 Spring 的多种数据访问技术很好地整合
+
+## Spring 支持的事务管理类型？
+Spring 支持如下两种方式的事务管理方式：
+- 编程式事务，通过开发者自行编写程序来控制事务。通常可选择面向 PlatformTransactionManager或 TransactionTemplate 进行编程。这种方式带来了很大的灵活性，但很难维护。
+
+- 声明式事务，在配置文件或注解中配置事务（推荐使用）。这种方式可将事务管理代码和业务代码分离。只需通过注解或者 XML 配置即可管理事务。因此具有很好的可维护性。
+
+声明式事务又分为两种：
+
+- 基于`XML`的声明式事务
+- 基于`注解`的声明式事务
+
+>推荐使用`声明式事务`，这种方式可将事务管理代码和业务代码分离。只需通过注解或者 XML 配置即可管理事务。因此具有很好的可维护性。
+但在一些有特殊要求的事务控制场景下，也可以通过少量的编程式事务进行辅助
+
