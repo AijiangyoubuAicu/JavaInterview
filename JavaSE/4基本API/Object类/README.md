@@ -114,7 +114,9 @@ public class Person {
 我们可以查看一下源码，学习一下：
 
 ~~~java
-public static boolean equals(Object a, Object b) {  
-    return (a == b) || (a != null && a.equals(b));  
+class Object_Demo {
+		public static boolean equals(Object a, Object b) {  
+		    return (a == b) || (a != null && a.equals(b));  
+		}
 }
 ~~~

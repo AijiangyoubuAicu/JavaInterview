@@ -2,11 +2,15 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/JavaEE" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/JavaEE/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis/pom.xml" />
       </list>
     </option>
   </component>
