@@ -58,7 +58,7 @@
 	- 时间与日期类
 	- [网络编程类](JavaSE/4基本API/网络编程/README.md)
 	- String字符串类
-	- 字符串格式化类
+	- Format字符串格式化类
 	- Pattern正则表达式类
 		
 - [容器](JavaSE/5容器/ReadMe.md)

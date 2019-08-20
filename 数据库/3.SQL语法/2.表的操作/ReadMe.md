@@ -1,67 +1,67 @@
-### 表的操作
+# 表的操作
 
-***增***
+## 增
 		
-		CREATE [TEMPORARY] TABLE [ IF NOT EXISTS] [ 库名.]表名 ( 表的结构定义 )[ 表选项属性 ];
-			- TEMPORARY 临时表，会话结束时表自动消失
-			-	IF NOT EXISTS 判断是否存在，如果不存在则创建
+	CREATE [TEMPORARY] TABLE [ IF NOT EXISTS] [ 库名.]表名 ( 表的结构定义 )[ 表选项属性 ];
+	  - TEMPORARY 临时表，会话结束时表自动消失
+	  - IF NOT EXISTS 判断是否存在，如果不存在则创建
 			
-		CREATE TABLE 表名 LIKE 要复制的表名;                     // 复制表结构
-		CREATE TABLE 表名 [AS] SELECT * FROM 要复制的表名;       // 复制表结构和数据
+	CREATE TABLE 表名 LIKE 要复制的表名;      // 复制表结构
+	CREATE TABLE 表名 [AS] SELECT * FROM 要复制的表名;  // 复制表结构和数据
 			
-***删***
+## 删
 		
-		DROP TABLE[ IF EXISTS] 表名 ...;      // 删除一张表
+	DROP TABLE[ IF EXISTS] 表名 ...;      // 删除一张表
 	
-***改***
+## 改
 		
-		TRUNCATE [TABLE] 表名;                // 清空当前数据表信息
-		ALTER TABLE 表名 表的选项;             // 修改表信息
-		ALTER TABLE 表名 操作名;               // 修改表的字段信息
-		RENAME TABLE 原表名 TO 新表名;         // 修改表名
-		RENAME TABLE 原表名 TO 库名.表名;      // 将该表改名并可以移动到某库
+	TRUNCATE [TABLE] 表名;         // 清空当前数据表信息
+	ALTER TABLE 表名 表的选项;       // 修改表信息
+	ALTER TABLE 表名 操作名;         // 修改表的字段信息
+	RENAME TABLE 原表名 TO 新表名;    // 修改表名
+	RENAME TABLE 原表名 TO 库名.表名;  // 将该表改名并可以移动到某库
 		
-***查***
+## 查
 		
-		SHOW TABLES[ LIKE 'pattern'];       // 查看当前所有的表
-		SHOW TABLES FROM  库名;              // 查看数据库中的表
-		SHOW CREATE TABLE 表名; （信息更详细）  // 查看表的详细信息
-		DESC 表名;                            // 显示表的状态 
-		DESCRIBE 表名;                        // 查看表的设计信息
-		EXPLAIN 表名;                         // 显示了mysql如何使用索引来处理SELECT语句以及连接表
-		SHOW COLUMNS FROM 表名 [LIKE 'PATTERN'];             // 显示表字段结构详细信息 
-		SHOW TABLE STATUS [FROM db_name] [LIKE 'pattern'];  // 获取表的信息
+	SHOW TABLES[ LIKE 'pattern'];       // 查看当前所有的表
+	SHOW TABLES FROM  库名;              // 查看数据库中的表
+	SHOW CREATE TABLE 表名; （信息更详细）  // 查看表的详细信息
+	DESC 表名;                            // 显示表的状态 
+	DESCRIBE 表名;                        // 查看表的设计信息
+	EXPLAIN 表名;                         // 显示了mysql如何使用索引来处理SELECT语句以及连接表
+	SHOW COLUMNS FROM 表名 [LIKE 'PATTERN'];  // 显示表字段结构详细信息 
+	SHOW TABLE STATUS [FROM db_name] [LIKE 'pattern'];  // 获取表的信息
     
-***其他***
+## 其他
 
-		CHECK TABLE tbl_name [, tbl_name] ... [option] ...;                       // 检查表是否有错误
-		OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...;    // 优化表
-		REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ... [QUICK] [EXTENDED] [USE_FRM]; // 修复表
-    ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...;     // 分析表
+	CHECK TABLE tbl_name [, tbl_name] ... [option] ...;   // 检查表是否有错误
+	OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...;  // 优化表
+	REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ... [QUICK] [EXTENDED] [USE_FRM]; // 修复表
+	ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...;   // 分析表
 
-### 表的结构定义
+# 表的结构定义
 
-***字段***
+## 字段
 
-   - 每个字段必须有数据类型
-   - 最后一个字段后不能有逗号
+- 每个字段必须有数据类型
+- 最后一个字段后不能有逗号
    
-    对于字段的定义：
+  对于字段的定义：
           
-        字段名 数据类型 [NOT NULL | NULL] [DEFAULT default_value] [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY] [COMMENT 'string']
+      字段名 数据类型 [NOT NULL | NULL] [DEFAULT default_value] [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY] [COMMENT 'string']
 						
-						- 基本：字段名 数据类型;
-						- [NOT NULL | NULL] 约束，定义"非空"或"空"
-						- [DEFAULT default_value] 默认值，定义字段的初始值
-						- [AUTO_INCREMENT] 自增约束，仅可约束"主键"和“UNIQUE”的字段且只有一个，默认为1开始增长
-						- [UNIQUE [KEY] | [PRIMARY] KEY] 唯一索引/字段，使该字段为"唯一索引"/"唯一字段"
-						- [COMMENT 'string'] 表注释，为该字段添加"注释"
+		- 基本：字段名 数据类型;
+		- [NOT NULL | NULL] 约束，定义"非空"或"空"
+		- [DEFAULT default_value] 默认值，定义字段的初始值
+		- [AUTO_INCREMENT] 自增约束，仅可约束"主键"和“UNIQUE”的字段且只有一个，默认为1开始增长
+		- [UNIQUE [KEY] | [PRIMARY] KEY] 唯一索引/字段，使该字段为"唯一索引"/"唯一字段"
+		- [COMMENT 'string'] 表注释，为该字段添加"注释"
 						
-***数据类型***
+## 数据类型
 
-	1. 数值类型
+#### 数值类型
 		
-		-- a. 整型 ----------
+- 整型
 		
 		    类型         字节     范围（有符号位）
 		    tinyint     1字节    -128 ~ 127      无符号位：0 ~ 255
@@ -77,47 +77,47 @@
 		    - 在满足要求的情况下，越小越好。
 		    - 1表示bool值真，0表示bool值假。MySQL没有布尔类型，通过整型0和1表示。常用tinyint(1)表示布尔型。
 		    
-	-- b. 浮点型 ----------
+- 浮点型
 	
-		    类型             字节     范围
-		    float(单精度)     4字节
-		  * double(双精度)    8字节
+		类型             字节     范围
+		float(单精度)     4字节
+		* double(双精度)    8字节
 		    
-		    - 浮点型既支持符号位 unsigned 属性，也支持显示宽度 zerofill 属性。
-		        不同于整型，前后均会补填0.
-		    - 定义浮点型时，需指定总位数和小数位数。
-		        float(M, D)     double(M, D)
-		        M表示总位数，D表示小数位数。
-		        M和D的大小会决定浮点数的范围。不同于整型的固定范围。
-		        M既表示总位数（不包括小数点和正负号），也表示显示宽度（所有显示符号均包括）。
-		        支持科学计数法表示。
-		        浮点数表示近似值。
+		- 浮点型既支持符号位 unsigned 属性，也支持显示宽度 zerofill 属性。
+		  不同于整型，前后均会补填0.
+		- 定义浮点型时，需指定总位数和小数位数。
+		  float(M, D)     double(M, D)
+		  M表示总位数，D表示小数位数。
+		  M和D的大小会决定浮点数的范围。不同于整型的固定范围。
+		  M既表示总位数（不包括小数点和正负号），也表示显示宽度（所有显示符号均包括）。
+		  支持科学计数法表示。
+		  浮点数表示近似值。
         
-	-- c. 定点数 ----------
+- 定点数
 		
-		  decimal         可变长度
-		  decimal(M, D)   M也表示总位数，D表示小数位数。
+		decimal         可变长度
+		decimal(M, D)   M也表示总位数，D表示小数位数。
 		  
 		  - 保存一个精确的数值，不会发生数据的改变，不同于浮点数的四舍五入。
 		  - 将浮点数转换为字符串来保存，每9位数字保存为4个字节。
     
-	2.字符串类型
+#### 字符串类型
 
-		-- a. char, varchar ----------
+- char, varchar
 		
-		    char    定长字符串，速度快，但浪费空间
-		    varchar 变长字符串，速度慢，但节省空间
+		char    定长字符串，速度快，但浪费空间
+		varchar 变长字符串，速度慢，但节省空间
 		    
-		    - M表示能存储的最大长度，此长度是字符数，非字节数
-		    - 不同的编码，所占用的空间不同
-				    char,最多255个字符，与编码无关
-				    varchar,最多65535字符，与编码有关
-		    - 一条有效记录最大不能超过65535个字节
-		        utf8 最大为21844个字符，gbk 最大为32766个字符，latin1 最大为65532个字符
-		    - varchar 是变长的，需要利用存储空间保存 varchar 的长度，如果数据小于255个字节，则采用一个字节来保存长度，反之需要两个字节来保存。
-		      varchar 的最大有效长度由最大行大小和使用的字符集确定。
-		    - 最大有效长度是65532字节，因为在varchar存字符串时，第一个字节是空的，不存在任何数据，然后还需两个字节来存放字符串的长度，所以有效长度是64432-1-2=65532字节。
-		    例：若一个表定义为 CREATE TABLE tb(c1 int, c2 char(30), c3 varchar(N)) charset=utf8; 问N的最大值是多少？ 答：(65535-1-2-4-30*3)/3
+		- M表示能存储的最大长度，此长度是字符数，非字节数
+		- 不同的编码，所占用的空间不同
+		  char,最多255个字符，与编码无关
+		  varchar,最多65535字符，与编码有关
+		- 一条有效记录最大不能超过65535个字节
+		  utf8 最大为21844个字符，gbk 最大为32766个字符，latin1 最大为65532个字符
+		- varchar 是变长的，需要利用存储空间保存 varchar 的长度，如果数据小于255个字节，则采用一个字节来保存长度，反之需要两个字节来保存。
+		  varchar 的最大有效长度由最大行大小和使用的字符集确定。
+		- 最大有效长度是65532字节，因为在varchar存字符串时，第一个字节是空的，不存在任何数据，然后还需两个字节来存放字符串的长度，所以有效长度是64432-1-2=65532字节。
+		  例：若一个表定义为 CREATE TABLE tb(c1 int, c2 char(30), c3 varchar(N)) charset=utf8; 问N的最大值是多少？ 答：(65535-1-2-4-30*3)/3
 		    
 		-- b. blob, text ----------
 		
