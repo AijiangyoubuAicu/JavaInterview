@@ -45,5 +45,6 @@ toString()方法返回该对象的字符串表示，其实该字符串内容就�
 具体操作，我们也可以通过 IDE 的快捷方式进行输入
 
 ## hashCode() 方法
-	
-请见![](../../5容器/2.单列集合Collection/Set/ReadMe.md)
+
+请见：
+[Set集合](../../5容器/2.单列集合Collection/Set/ReadMe.md)
