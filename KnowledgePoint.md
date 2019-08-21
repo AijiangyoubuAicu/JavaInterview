@@ -51,10 +51,10 @@
 		
 - [基本API](JavaSE/4基本API)
 
-	- [Object](JavaSE/4基本API/Object类/README.md)
-	- [System](JavaSE/4基本API/System类/README.md)
-	- Random类
-	- Scanner类
+	- [Object根类](JavaSE/4基本API/Object根类/README.md)
+	- [System系统类](JavaSE/4基本API/System系统类/README.md)
+	- Random随机数类
+	- Scanner扫描类
 	- [时间与日期类](JavaSE/4基本API/时间与日期类/README.md)
 	- [网络编程类](JavaSE/4基本API/网络编程类/README.md)
 	- [String字符串类](JavaSE/4基本API/String字符串类/README.md)
@@ -109,8 +109,7 @@
 - CSS 层叠样式表
 - JavaScript 直译式脚本语言
 - JQuery JS库
-- Json JS对象简谱
-- Ajax 异步JS与XML
+- Json与Ajax 同步异步JS
 - Bootstrap CSS库
 - Vue	进式框架
 	
@@ -123,15 +122,13 @@
 
 ## JavaEE
 
-- [大纲纲要](JavaEE)
-	
-	- XML
-	- Servlet
-	- JDBC 数据库连接
-	- - Cookie与Session 会话层
-	- JSP与 JSTL
-	- Filter 过滤器
-	- Listener 监听器
+- [XML 可扩展标记语言](JavaEE/src/main/directory/XML/ReadMe.md)
+- [JDBC 数据库连接](JavaEE/src/main/directory/JDBC与数据库连接池/ReadMe.md)
+- [Servlet 请求与响应](JavaEE/src/main/directory/Servlet/ReadMe.md)
+- Cookie与Session 会话层
+- JSP与JSTL 视图层
+- Filter 过滤器
+- Listener 监听器
 
 ## SSM
 
