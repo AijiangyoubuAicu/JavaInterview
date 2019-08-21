@@ -52,12 +52,12 @@
 - [基本API](JavaSE/4基本API)
 
 	- [Object](JavaSE/4基本API/Object类/README.md)
-	- System
+	- [System](JavaSE/4基本API/System类/README.md)
 	- Random类
 	- Scanner类
-	- 时间与日期类
-	- [网络编程类](JavaSE/4基本API/网络编程/README.md)
-	- String字符串类
+	- [时间与日期类](JavaSE/4基本API/时间与日期类/README.md)
+	- [网络编程类](JavaSE/4基本API/网络编程类/README.md)
+	- [String字符串类](JavaSE/4基本API/String字符串类/README.md)
 	- Format字符串格式化类
 	- Pattern正则表达式类
 		
@@ -72,16 +72,15 @@
 		
 - [IO数据的处理](JavaSE/5容器/ReadMe.md)
 
-	- File文件类
+	- [File文件类](JavaSE/6IO数据的处理/File文件类/ReadMe.md)
 	- RandomAccessFile类基于指针的随机访问
-	- IO流	
-	- Stream流	
+	- [IO流](JavaSE/6IO数据的处理/IO流/ReadMe.md)
 		
 - [多线程与并发](JavaSE/5容器/ReadMe.md)
 		
 - [Java高级语法特性](JavaSE/5容器/ReadMe.md)
 	- 反射
-	- 异常处理
+	- [异常处理](JavaSE/8Java高级语法特性/异常处理/ReadMe.md)
 	- 文档注释
 	- 枚举
 	- 泛型
@@ -93,7 +92,16 @@
 		
 ## 算法与数据结构
 
+- [算法概述](算法与数据结构/ReadMe.md)
+
 ## 设计模式
+
+- [设计模式概述](设计模式/ReadMe.md)
+	- 创建者型模式
+		- [单例模式](设计模式/创建型模式/单例模式/ReadMe.md)
+		- 工厂模式
+		- 建造者模式
+		- 原型模式
 
 ## Web前端
 
@@ -126,6 +134,7 @@
 	- Listener 监听器
 
 ## SSM
+
 - [Spring框架](Spring/ReadMe.md)
 
 - SpringMVC框架
