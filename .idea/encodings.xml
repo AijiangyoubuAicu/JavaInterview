@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/JavaEE" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding001.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding002.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding003.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding004.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding005.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding006.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding007.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding008.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding009.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/JavaSE/8Java高级语法特性/异常处理/java/ExceptionHanding010.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
