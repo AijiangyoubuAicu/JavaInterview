@@ -1,0 +1,14 @@
+下面是笔记:
+
+1.javase基础:	http://note.youdao.com/noteshare?id=87e4e16c459f493d5b5d3184f8a7ee98
+2.javaweb入门:	http://note.youdao.com/noteshare?id=b88701a97eae08203a3e8f05083954c3
+3.工具maven:	http://note.youdao.com/noteshare?id=df623cba2531f06b12233cd93f59fa44
+4.工具svn初级:	http://note.youdao.com/noteshare?id=4b1956d9b5b362b2e335df127c0c01a5
+5.hibernate5:	http://note.youdao.com/noteshare?id=1ce82cc5d5ec9372972e3f18400b1ee0
+6.spring5:		http://note.youdao.com/noteshare?id=53239578704d58f98b2f33d54ae7e114
+7.springmvc5:	http://note.youdao.com/noteshare?id=707c7901579b895079f895468e92f7c7
+8.easyui+ ssh+后台+权限控制项目: http://note.youdao.com/noteshare?id=44b84f8509c9ab8f714007b3a8ace20a
+9.mysq|数据库核心技术: http://note.youdao.com/noteshare?id=83c3ce288f38820e878ee8357322a055
+10.jdbc操作数据:	http://note.youdao.com/noteshare?id=3be1d69d25e73be1a3a7593b0ff7a151
+11.Mybatis的笔记:	http://note.youdao.com/noteshare?id=572e95469fe5ca508216959305485e16
+12.JPA的笔记:	http://note.youdao.com/noteshare?id=3178c24fba783a6ee317721ce6d64257
