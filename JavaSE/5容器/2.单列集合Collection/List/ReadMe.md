@@ -1,14 +1,16 @@
-## List 集合概述
+# List 集合概述
+
 `java.util.List`继承继承自Collection接口，是单列集合一个重要的分支，习惯性地会实现了
 List接口对象称为"List集合"，特点：
-- 在List集合中允许出现重复的元素
-- 所有的元素都以一种线性的方式进行存储的
-- 在程序中可以通过索引来访问集合中的指定元素
-- 元素有序，即元素的存入顺序和取出顺序一致
+
+- 在List集合中允许出现**重复**的元素
+- 所有的元素都以一种**线性**的方式进行存储的
+- 在程序中可以通过**索引**来访问集合中的指定元素
+- 元素**有序**，即元素的存入顺序和取出顺序一致
 
 ## List 接口中常用的方法	
-List接口作为Collection集合的子接口，不但继承了Collection接口中的全部方法，而且
-还增加了一些根据元素索引来操作集合的特有方法
+`List`接口作为`Collection`集合的子接口，不但继承了 Collection 接口中的全部方法，而且
+还增加了一些根据元素**索引**来操作集合的特有方法
 
 - `public void add(int index, E element)` 将指定的元素，添加到集合中的指定位置上
 - `public E get(int index)` 返回集合中指定位置的元素
@@ -17,37 +19,48 @@ List接口作为Collection集合的子接口，不但继承了Collection接口�
 
 [List特有方法案例.java](./java/Demo01_List.java)
 
-## List 的子类
+# List 的子类
 
-#### ArrayList 集合
-java.util.ArrayList集合数据存储的结构是"数组"，元素增删快，查找快，由于日常开发使用最多的
-功能便是查询数据和遍历数据，索引使用ArrayList是最常用的集合
+### ArrayList 集合
+`java.util.ArrayList`是**大小可变**的数组，集合数据存储的结构是**数组**，特点是元素**长度可变**、**增删慢**、**查找快**，
+由于日常开发使用最多的功能便是查询数据和遍历数据，利用索引使用ArrayList是最常用的集合
 
-#### LinkedList 集合
+### 构造方法
+
+- `public ArrayList()` 构造一个内容为空的集合
+
+### 常用方法
+
+- `public boolean add(E e)` 将指定的元素添加到此集合的尾部
+- `public E remove(int index)` 移出此集合中指定位置上的元素，返回被删除的元素
+- `public E get(int index)` 返回此集合中指定位置上的元素，返回获取的元素
+- `public int size()` 返回此集合中的元素数，遍历集合时就可以控制索引范围，防止越界
+
+## LinkedList 集合
 java.util.LinkedList集合数据存储的是"链表"结构，方便元素的添加、删除的集合
 
 ![](../../img/双向链表.png)
 
 实际开发中对一个集合元素的添加和删除经常涉及到首位操作，而LinkedList提供了大量的首尾操作：
-- public void addFirst(E e) 将指定的元素插入到此列表的开头
-- public void addLast(E e) 将指定的元素插入到此列表的末尾
-- public E getFirst() 返回此列表的第一个元素
-- public E getLast() 返回此列表的最后一个元素
-- public E removeFirst() 移除并返回此列表的第一个元素
-- public E removeLast() 移除并返回此列表的最后一个元素
-- public E pop() 从此列表所表示的堆栈弹出一个元素
-- public void push(E e) 将元素推入到此列表所表示的堆栈
-- public boolean isEmpty() 如果此列表不包含元素，则返回true
+- `public void addFirst(E e)` 将指定的元素插入到此列表的开头
+- `public void addLast(E e)` 将指定的元素插入到此列表的末尾
+- `public E getFirst()` 返回此列表的第一个元素
+- `public E getLast()` 返回此列表的最后一个元素
+- `public E removeFirst()` 移除并返回此列表的第一个元素
+- `public E removeLast()` 移除并返回此列表的最后一个元素
+- `public E pop()` 从此列表所表示的堆栈弹出一个元素
+- `public void push(E e)` 将元素推入到此列表所表示的堆栈
+- `public boolean isEmpty()` 如果此列表不包含元素，则返回true
 
 [LinkedList首位操作方法案例](java/linkedList/Demo01_LinkedList.java)
 
-#### Vector 集合
+## Vector 集合
 Vector类可以实现可增长的对象数组，与数组一样，包含了可以使用整数索引进行访问的组件，
 Vector的大小可以根据需要增大或索引，以适应创建Vector后进行添加和移除项的操作
 
 Vector是同步的，可用于多线程；
 
-### 附录：ArrayList源代码分析
+# 附录：ArrayList源代码分析
 - ArrayList 基于数组实现，所以支持快速随机访问
 ArrayList 接口标识着该类支持快速随机访问
 	

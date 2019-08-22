@@ -25,6 +25,8 @@
       <sourceFolder url="file://$MODULE_DIR$/2Java运算与控制流程/5.BigDecimal精度运算类/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/3面向对象/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/4基本API/String字符串类/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/1.数组Array/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/4基本API/时间与日期类/java" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
