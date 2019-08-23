@@ -485,26 +485,250 @@ DELETE FROM tbl_name [WHERE 条件]
 ### 查询记录
 
 ```mysql
-
+SELECT select_expr,... FROM tbl_name [WHERE 条件] 
+[GROUP BY {col_name|position} HAVING 二次筛选] 
+[ORDER BY {col_name|position|expr} [ASC|DESC]] 
+[LIMIT 限制结果集的显示条数]
 ```
+
+* 查询表中所有记录
+
+  ```mysql
+  SELECT * FROM tbl_name;
+  ```
+
+  `*`所有字段
+
+*  指定字段的信息
+
+  ```mysql
+  SELECT 字段名称,... FROM tbl_name;
+  ```
+
+* 库名.表名
+
+  ```mysql
+  SELECT 字段名称,... FROM db_name.tbl_name;
+  ```
+
+* 给字段起别名
+
+  ```mysql
+  SELECT 字段名称 [AS] 别名名称,... FROM db_name.tbl_name; 
+  ```
+
+* 给数据表起别名
+
+  ```mysql
+  SELECT 字段名称 ,... FROM tbl_name [AS] 别名;
+  ```
+
+* 表名.字段名的
+
+  ```mysql
+  SELECT tbl_name.col_name,... FROM tbl_name;
+  ```
+
+* WHERE 条件
+  会筛选出符合条件的记录
+
+  * 比较运算符
+
+    `>` `>=` `<` `<=` `!=` `<>`  `<=>`
+
+    * `<=>`和`=`的区别
+
+      `<=>`可以检测NULL值
+
+  * `IS [NOT] NULL`
+
+    检测值是否为`NULL`或者`NOT NULL`
+
+  * 指定范围
+
+    `[NOT] BETWEEN ... AND`
+
+  * 指定集合
+    `[NOT] IN(值,...)`
+
+  * 逻辑运算符
+
+    * `AND`（逻辑与）
+    * `OR`（逻辑或）
+
+  * 匹配字符
+
+    * `[NOT] LIKE`
+    * `%`任意长度的字符串
+    * `_`任意一个字符
+
+* `GROUP BY`分组
+
+  * 把值相同放到一个组中，最终查询出的结果只会显示组中一条记录
+  * 分组配合`GROUP_CONCAT()`查看组中某个字段的详细信息
+  * 配合聚合函数使用
+    * `COUNT()`统计记录总数
+      1. 如果写的是`COUNT(字段名称)`，字段中的值为`NULL`，不统计进来
+      2. 写`COUNT(*)`会统计`NULL`值
+    * `SUM()`求和
+    * `MAX()`求最大值
+    * `MIN()`求最小值
+    * `AVG()`求平均值
+  * 配合`WITH ROLLUP`关键使用
+    会在记录末尾添加一条记录，是上面所有记录的总和
+  * `HAVING`子句对分组结果进行二次筛选
+
+* `ORDER BY`排序
+
+  ```mysql
+  ORDER BY 字段名称 ASC|DESC
+  ```
+
+* `LIMIT`限制结果集显示条数
+
+  * `LIMIT 值`
+    显示结果集的前几条记录
+  * `LIMIT offset,row_count`
+    从`offset`开始，显示几条记录，`offset`从0开始
 
 ### 多表查询
 
-```mysql
+* 笛卡尔积的形式
 
-```
+* 内连接的形式
+
+  查询两个表中符合连接条件的记录
+
+  ```mysql
+  SELECT 字段名称,... FROM tbl_name1
+  INNER JOIN tbl_name2
+  ON 连接条件
+  ```
+
+* 外连接的形式
+
+  * 左外连接
+
+    ```mysql
+    SELECT 字段名称,... FROM tbl_name1
+    LEFT [OUTER] JOIN tbl_name2
+    ON 条件;
+    ```
+
+    先显示左表中的全部记录，再去右表中查询复合条件的记录，不符合的以NULL代替
+
+  * 右外连接
+
+    ```mysql
+    SELECT 字段名称,... FROM tbl_name1
+    RIGHT [OUTER] JOIN tbl_name2
+    ON 条件;
+    ```
+
+    先显示右表中的全部记录，再去左表中查询复合条件的记录，不符合的以NULL代替
 
 ### 外键约束
 
-```mysql
+- 只有`InnoDB`存储引擎支持外键
 
-```
+- 创建外键
+
+  - 建表时指定外键
+
+    ```mysql
+    [CONSTRAINT 外键名称 ]FOREIGN KEY(字段名称) REFERENCES 主表(字段名称)
+    ```
+
+    - 子表的外键字段和主表的主键字段类型要相似；如果是数值型要求一致，并且无符号也要一致；如果是字符型，要求类型一致，长度可以不同
+
+    - 如果外键字段没有创建索引，`MySQL`会自动帮我们添加索引
+
+    - 子表的外键关联的必须是父表的主键
+
+    - 外键约束的参照操作
+
+      - `CASCADE`
+        从附表删除或更新，子表也跟着删除或者更新，级联的操作
+
+      - `SET NULL`
+
+        从附表删除或者更新记录，并设置子表的外键列为`NULL`。
+
+      - `NO ACTION | RESTRICT`
+        拒绝对父表做更新或者删除操作
+
+  - 动态添加外键
+
+    - 动态添加外键
+
+      ```mysql
+      ALTER TABLE tbl_name
+      [CONSTRAINT 外键名称] ADD FOREIGN KEY(外键字段) REFERENCES 主表(主键字段);
+      ```
+
+      动态添加外键之前表中的记录一定合法的记录，没有脏值，否则外键添加不成功
+
+    - 动态删除外键
+
+      ```mysql
+      ALTER TABLE tbl_name
+      DROP FOREIGN KEY fk_name;
+      ```
 
 ### 特殊形式的查询
 
-```mysql
+* 子查询
 
-```
+  ```mysql
+  SELECT 字段名称 FROM tbl_name WHERE col_name=(SELECT col_name FROM tbl_name)
+  ```
+
+  * 内层语句查询的结果可以做为外层语句查询的条件
+
+  * 由IN引发的子查询
+
+  * 由比较运算符引出子查询
+
+  * 由EXISTS引发的子查询
+
+  * ANY SOME ALL
+
+    | 运算符\关键字 | ANY    | SOME   | ALL    |
+    | ------------- | ------ | ------ | ------ |
+    | \>、>=        | 最小值 | 最小值 | 最大值 |
+    | <、>=         | 最大值 | 最大值 | 最小值 |
+    | =             | 任意值 | 任意值 |        |
+    | <>、!=        |        |        | 任意值 |
+
+  * INSERT ... SELECT
+
+  * CREATE ... SELECT
+
+  * CREATE TABLE tbl_name LIKE tbl_name;
+
+* 联合查询
+
+  * `UNION`
+
+    ```mysql
+    SELECT 字段名称,... FROM tbl_name1 
+    UNION
+    SELECT 字段名称... FROM tbl_name2;
+    ```
+
+  * `UNION ALL`
+
+    ```mysql
+    SELECT 字段名称,... FROM tbl_name1 
+    UNION ALL
+    SELECT 字段名称... FROM tbl_name2;
+    ```
+
+  * `UNION ALL`是简单的合并，`UNION`会去掉表中重复记录
+
+* 自身连接查询
+
+  无限级分类的实现形式
 
 ## 8. MySQL常用函数
 
