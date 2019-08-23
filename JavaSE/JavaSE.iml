@@ -32,6 +32,7 @@
       <sourceFolder url="file://$MODULE_DIR$/7多线程与并发/线程同步与安全/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/7多线程与并发/线程状态/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/7多线程与并发/线程池/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/枚举/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
