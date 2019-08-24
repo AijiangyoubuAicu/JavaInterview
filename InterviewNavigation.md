@@ -2,45 +2,116 @@
 
 ## JavaSE
 
-- Java基本常识
+- [Java基本常识](JavaSE/0Java基本常识/Interview.md)
+	- 简单的说一下什么是跨平台 
 
-- [变量与数据类型](JavaSE/1变量与数据类型/Interview.md)
+- 变量与数据类型
+	- [变量](JavaSE/1变量与数据类型/变量/Interview.md)
+		- 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
+	- [常量](JavaSE/1变量与数据类型/常量/Interview.md)
+		- char型变量能不能存储一个中文汉字？为什么？
+	- [数据类型](JavaSE/1变量与数据类型/数据类型/Interview.md)
+		- 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
+		- 引用类型是占用几个字节
+		- 不同的数据类型的转换有哪些规则
+		- 强制类型转换的注意事项
+	- [包装类](JavaSE/1变量与数据类型/包装类/Interview.md)
+		- 为什么需要包装类
+		- 基本数据类型与包装类的区别
 
-	- 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
-	- 值传递和引用传递有哪些区别
-	- 不同的数据类型的转换有哪些规则
-	- 强制类型转换的注意事项
-	- 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
-
-- [Java运算与控制流程](JavaSE/2Java运算与控制流程/Interview.md)
-
-	- 值传递和引用传递有哪些区别
-	- break、continue 以及 return 有什么区别？
+- Java运算与控制流程
 	
-- [面向对象](JavaSE/3面向对象/Interview.md)
-
-	- 面向对象与面向过程的区别？
-	- 面向对象有哪些特征？
-	- 什么是不可变类?
-	- 什么是继承？
-	- 接口与抽象类的区别
-	- 重载与重写有什么区别？
-	- this 与 super 关键字有什么区别？
-	- Java提供了哪两种用于多态的机制？
-	- static 关键字有哪些作用
-	- 使用 static 关键字的四种使用情况
-	- static 与 final 结合使用表示什么意思？
-	- instanceof 有什么作用
+	- [运算符](JavaSE/2Java运算与控制流程/1.运算符/Interview.md)
+		- "4&5" "4^5" "4|5" "4&10 >> 1"各等于多少
+		- 说说 && 于 & 的区别
+		- short s1 = 1，s1 = 1 + 1有什么错吗？或者short s1 = 1，s1 += 1有什么错吗?
+		- 用最有效率的方法算出 2 * 8 等于几
+	- [控制流程](JavaSE/2Java运算与控制流程/2.控制流程/Interview.md)
+		- break、continue 以及 return 有什么区别？
+		- java中switch选择结构中可以使用数据类型的数据(在JDK1.8)
+	- [方法](JavaSE/2Java运算与控制流程/3.方法/Interview.md)
+		- 值传递和引用传递有哪些区别
+	- [Math数学运算类](JavaSE/2Java运算与控制流程/4.Math数学运算类/Interview.md)
+		- Math.round(-2.5)等于多少
+	- [BigDecimal精度运算类](JavaSE/2Java运算与控制流程/5.BigDecimal精度运算类/Interview.md)
+	
+- [面向对象面试题合集](JavaSE/3面向对象/Interview.md)
+	- [面向对象与类](JavaSE/3面向对象/面向对象与类/Interview.md)
+		- 面向对象与面向过程的区别
+		- 面向对象有哪些特征
+		- 面向对象六大原则
+	- [抽象继承体系]
+		- 什么是继承
+		- 重载与重写有什么区别
+		- 接口与抽象类的区别
+		- this 与 super 关键字有什么区别
+		- Java提供了哪两种用于多态的机制
+		- instanceof 有什么作用
+	- [static静态关键字]
+		- static 关键字有哪些作用
+    - 使用 static 关键字的四种使用情况
+    - static 与 final 结合使用表示什么意思？
+	- [final不可变关键字]
+		- 什么是不可变类?
+		- 使用 final 关键字修饰一个变量时，是引用不能变？还是引用的对象不能变
+	- [权限管理关键字]
+	- [内部类]
 	
 - 基本API
-
+	- [Object根类](JavaSE/4基本API/Object根类/Interview.md)
+		- ==与equals的区别
+		- 为什么规定重写 equals() 就一定要重写 hashCode() 方法
+		- 两个对象的hashCode相同，则equals也一定为true吗？
+	- System系统类
+	- Random随机数类
+	- Scanner扫描类
+	- 时间与日期类
+	- 网络编程类
+	- [String字符串类](JavaSE/4基本API/String字符串类/Interview.md)
+		- String、StringBuffer和StringBuilder的区别
+	- Format字符串格式化类	
+	- Pattern正则表达式类
+	
 - 容器
-
+	- 数组Array
+	- [Iterator迭代器](JavaSE/5容器/iterator/Interview.md)
+		- ConcurrentModificationException异常出现的原因
+	- 单列集合Collection
+		- [List](JavaSE/5容器/2.单列集合Collection/List/Interview.md)
+			- ArrayList和LinkedList的区别
+			- ArrayList和Vector的比较
+		- [Set](JavaSE/5容器/2.单列集合Collection/Set/Interview.md)
+			- HashSet与TreeSet的比较
+	- [映射表Map](JavaSE/5容器/3.映射表Map/Interview.md)
+		- HashMap和ConcurrentHashMap的区别
+		- HashTable和ConcurrentHashMap的区别
+		- 如何让Map集合保证线程安全又效率高
+		- 怎么样让HashMap同步
+		
+	
 - IO数据的处理
+	- File文件类
+	- RandomAccessFile类基于指针的随机访问
+	- IO流
 
 - 多线程与并发
+	- 多线程概念
+	- Java多线程
+	- 线程同步与安全
+	- 线程状态
+	- 线程池
 
 - Java高级语法特性
+	- 反射
+	- 异常处理
+	- 文档注释
+	- 枚举
+	- [泛型](JavaSE/8Java高级语法特性/泛型/Interview.md)
+		- Java中的泛型是什么？使用泛型的好处是什么？
+		- Java的泛型是如何工作的？什么是类型擦除？
+		- 在Java中List<Object> 和原始类型 List 之间的区别
+	- 注解
+	- 语法糖
 
 ## Web前端
 

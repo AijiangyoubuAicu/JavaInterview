@@ -1,16 +1,24 @@
-## == 、equals 和 hashCode 有什么区别？
+## == 与 equals 的区别
+`==`比较的是两个引用中在内存中的指向是不是同一个对象(即同一内存空间)，也就是说在内存空间中的存储位置是否一致，如果
+两个对象的引用相同时(指向同一内存空间)，`==`操作非返回true，否则返回false
 
-- "=="运算符用来比较两个变量的值是否相等，也就是说该运算符用于比较变量对应的内存中所存储的数值是否相同，
-	要比较两个基本类型或两个引用变量是否相等
-
-- equals()是 Object 类是提供之一，所以每一个对象都具有equals()这个方法；Object 类定义的 equals()方法
-	是直接使用"=="运算符比较的两个对象，所以在没有重写该方法时，与"=="号等效；
-
-- hashCode() 方法是从 Object 类中继承过来的，它也用来鉴别两个对象是否相等；Object 类中的 hashCode() 方法
-	返回对象在内存中地址转换成的一个 int 值，所以如果没有重写 hashCode() 方法，任何对象的 hashCode() 方法都是不相等的
+`equals`用来比较某些特征是否一样；如果未重写equals方法，则它的作用与`==`相同，大部分的类都重写了equals方法，如String
+重写equals中它不止判断了内存地址，还增加了字符串是否相同的比较；
 
 ## 为什么规定重写 equals() 就一定要重写 hashCode() 方法
 
 一般重写 equals() 方法的同时也重写 hashCode() 方法，否则就违反了 Object.hashCode 的通用约定；
 这是因为如果不同时重写这两个方法，就导致该类与所有基于散列表 (hash) 的集合类 (HashMap、HashSet和Hashtable) 结合在一起才能正确运行；
+
+## 两个对象的hashCode相同，则equals也一定为true吗
+比如，自定义hashCode()方法
+```java
+@Override
+public int hashCode() {
+    return 1;
+}
+```
+这样，该类的hashCode()返回的值都会是1
+
+如果按照官方的规范重写hashCode()方法的话，hashCode一定相等，但是不按照官方的规范或者不重写hashCode方法就会出现不相等的情况
 

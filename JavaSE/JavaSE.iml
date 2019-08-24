@@ -10,7 +10,6 @@
       <sourceFolder url="file://$MODULE_DIR$/集合/2.集合Collection/List/java/arrayList/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/集合/2.集合Collection/List/java/linkedList/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/List/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/iterator/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/5容器/2.单列集合Collection/Set/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/5容器/3.映射表Map/java" isTestSource="false" />
@@ -35,6 +34,7 @@
       <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/枚举/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/反射/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/注解/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5容器/iterator/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

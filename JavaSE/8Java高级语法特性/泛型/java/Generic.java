@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Stats<T extends Number> {
     T[] nums;
 

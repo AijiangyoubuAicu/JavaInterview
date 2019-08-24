@@ -55,7 +55,7 @@
 
   - [数组Array](JavaSE/5容器/1.数组Array/README.md)
   - [单列集合Collection]
-  	- [iterator迭代器](JavaSE/5容器/2.单列集合Collection/iterator/ReadMe.md)
+  	- [iterator迭代器](JavaSE/5容器/iterator/ReadMe.md)
   	- [List](JavaSE/5容器/2.单列集合Collection/List/ReadMe.md)
   	- [Set](JavaSE/5容器/2.单列集合Collection/Set/ReadMe.md)
   - [映射表Map](JavaSE/5容器/3.映射表Map/ReadMe.md)
