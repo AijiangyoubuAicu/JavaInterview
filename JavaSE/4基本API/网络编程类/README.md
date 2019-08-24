@@ -1,8 +1,10 @@
+[TOC]
+
 # 网络编程入门
 
 ## 软件结构
 
-- **C/S结构** ：全称为Client/Server结构，是指客户端和服务器结构。常见程序有ＱＱ、迅雷等软件
+- **C/S结构**：全称为Client/Server结构，是指客户端和服务器结构。常见程序有ＱＱ、迅雷等软件
 
 ![](img/1_cs.jpg)
 
@@ -19,7 +21,7 @@
 它对数据的传输格式、传输速率、传输步骤等做了统一规定，通信双方必须同时遵守才能完成数据交换。
 
 
-* **TCP/IP协议：** 传输控制协议/因特网互联协议( Transmission Control Protocol/Internet Protocol)，
+* **TCP/IP协议：** 传输控制协议/因特网互联协议（Transmission Control Protocol/Internet Protocol），
 是Internet最基本、最广泛的协议。它定义了计算机如何连入因特网，以及数据如何在它们之间传输的标准。
 它的内部包含一系列的用于处理数据通信的协议，并采用了4层的分层模型，每一层都呼叫它的下一层所提供的协议来完成自己的需求。
 
@@ -37,12 +39,13 @@
 
 `java.net` 包中提供了两种常见的网络协议的支持：
 
-- **UDP**：用户数据报协议(User Datagram Protocol)。UDP是无连接通信协议，即在数据传输时，数据的发送端和接收端不建立逻辑连接。简单来说，当一台计算机向另外一台计算机发送数据时，发送端不会确认接收端是否存在，就会发出数据，同样接收端在收到数据时，也不会向发送端反馈是否收到数据。
+- **UDP**：用户数据报协议（User Datagram Protocol）。UDP是无连接通信协议，即在数据传输时，数据的发送端和接收端不建立逻辑连接。简单来说，当一台计算机向另外一台计算机发送数据时，发送端不会确认接收端是否存在，就会发出数据，同样接收端在收到数据时，也不会向发送端反馈是否收到数据。
 
   由于使用UDP协议消耗资源小，通信效率高，所以通常都会用于音频、视频和普通数据的传输例如视频会议都使用UDP协议，因为这种情况即使偶尔丢失一两个数据包，也不会对接收结果产生太大影响。
 
   但是在使用UDP协议传送数据时，由于UDP的面向无连接性，不能保证数据的完整性，因此在传输重要数据时不建议使用UDP协议
   
+
 UDP的交换过程:
 
 ![UDP通信图解](img\UDP通信图解.bmp)
@@ -60,10 +63,11 @@ UDP的交换过程:
     - 第二次握手，服务器端向客户端回送一个响应，通知客户端收到了连接请求
     - 第三次握手，客户端再次向服务器端发送确认信息，确认连接
     
+
 TCP三次握手：
 ![](img/4_tcp.jpg)
 
-​    完成三次握手，连接建立后，客户端和服务器就可以开始进行数据传输了。由于这种面向连接的特性，TCP协议可以保证传输数据的安全，所以应用十分广泛，例如下载文件、浏览网页等
+完成三次握手，连接建立后，客户端和服务器就可以开始进行数据传输了。由于这种面向连接的特性，TCP协议可以保证传输数据的安全，所以应用十分广泛，例如下载文件、浏览网页等。
 
 # 网络编程三要素
 
@@ -84,22 +88,22 @@ TCP三次握手：
 
 - 常用命令
 
-查看本机IP地址，在控制台输入：
+  查看本机IP地址，在控制台输入：
 
-```cmd
-ipconfig
-```
+  ```
+  ipconfig
+  ```
 
-检查网络是否连通，在控制台输入：
+  检查网络是否连通，在控制台输入：
 
-```cmd
-ping 空格 IP地址
-ping 220.181.57.216
-```
+  ```cmd
+  ping 空格 IP地址
+  ping 220.181.57.216
+  ```
 
-特殊的IP地址
+- 特殊的IP地址
 
-	本机IP地址：`127.0.0.1`、`localhost` 。
+  本机IP地址：`127.0.0.1`、`localhost` 。
 
 ## 端口号
 
@@ -130,7 +134,7 @@ TCP通信能实现两台计算机之间的数据交互，通信的两端，要�
 
 ## Socket类  
 
-`Socket` 套接字类：该类实现客户端套接字，套接字指的是两台设备之间通讯的端点
+`Socket`套接字类：该类实现客户端套接字，套接字指的是两台设备之间通讯的端点
 
 - 构造方法
 
@@ -140,22 +144,22 @@ TCP通信能实现两台计算机之间的数据交互，通信的两端，要�
 
 - 成员方法
 
-	- `public InputStream getInputStream()` ： 返回此套接字的输入流
+	- `public InputStream getInputStream()`：返回此套接字的输入流
 	
         - 如果此Scoket具有相关联的通道，则生成的InputStream 的所有操作也关联该通道
         - 关闭生成的InputStream也将关闭相关的Socket
     
-	- `public OutputStream getOutputStream()` ： 返回此套接字的输出流。
+	- `public OutputStream getOutputStream()`：返回此套接字的输出流。
 	
-		- 如果此Scoket具有相关联的通道，则生成的OutputStream 的所有操作也关联该通道。
-		- 关闭生成的OutputStream也将关闭相关的Socket。
-			
-	- `public void close()` ：关闭此套接字。
-	
-		- 一旦一个socket被关闭，它不可再使用。
-		- 关闭此socket也将关闭相关的InputStream和OutputStream 。 
+		- 如果此`Scoket`具有相关联的通道，则生成的`OutputStream`的所有操作也关联该通道。
+		- 关闭生成的`OutputStream`也将关闭相关的`Socket`。
 		
-	- `public void shutdownOutput()` ： 禁用此套接字的输出流。   
+	- `public void close()`：关闭此套接字。
+	
+		- 一旦一个`socket`被关闭，它不可再使用。
+		- 关闭此`socket`也将关闭相关的`InputStream`和`OutputStream` 。 
+		
+	- `public void shutdownOutput()`：禁用此套接字的输出流。   
 	
 		- 任何先前写出的数据将被发送，随后终止输出流。 
 
@@ -168,9 +172,17 @@ TCP通信能实现两台计算机之间的数据交互，通信的两端，要�
 	- `public ServerSocket(int port)` ：使用该构造方法在创建ServerSocket对象时，就可以将其绑定到一个指定的端口号上，参数port就是端口号
 
 
-	ServerSocket server = new ServerSocket(6666);
+```java
+ServerSocket server = new ServerSocket(6666);
+```
 
 
 - 成员方法
 
-	- `public Socket accept()` ：侦听并接受连接，返回一个新的Socket对象，用于和客户端实现通信。该方法会一直阻塞直到建立连接
+  - `public Socket accept()` ：侦听并接受连接，返回一个新的Socket对象，用于和客户端实现通信。该方法会一直阻塞直到建立连接
+
+------
+
+[回到顶部](#网络编程入门)
+
+[返回上一页](../../../KnowledgePoint.md)
