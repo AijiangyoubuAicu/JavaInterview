@@ -4,7 +4,7 @@
 public class Demo01_Thread {
     public static void main(String[] args) {
         // 创建自定义的线程对象并设置线程名
-        MyThread my = new MyThread("自定义的线程的子类");
+        Thread my = new MyThread("自定义的线程的子类");
         // 开启自定义的线程
         my.start();
         // 在主方法中执行同样的 for 循环，以观察并行运行

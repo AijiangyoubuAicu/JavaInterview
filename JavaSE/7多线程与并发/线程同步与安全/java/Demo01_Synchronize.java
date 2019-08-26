@@ -43,7 +43,7 @@ class Ticket implements Runnable {
 public class Demo01_Synchronize extends Thread {
     public static void main(String[] args) {
         // 创建线程任务对象
-        Ticket ticket = new Ticket();
+        Runnable ticket = new Ticket();
         // 创建三个窗口对象
         Thread t1 = new Thread(ticket, "窗口1");
         Thread t2 = new Thread(ticket, "窗口2");

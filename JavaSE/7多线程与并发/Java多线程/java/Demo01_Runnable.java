@@ -10,7 +10,7 @@ class MyRunnable implements Runnable {
 public class Demo01_Runnable {
     public static void main(String[] args){
         // 创建自定义线程任务对象
-        MyRunnable mr = new MyRunnable();
+        Runnable mr = new MyRunnable();
         // 创建线程对象
         Thread t = new Thread(mr);
         t.start();

@@ -9,7 +9,7 @@ public class Demo01_ThreadPool {
         // 创建线程池对象，并设置线程池容量
         ExecutorService service = Executors.newFixedThreadPool(2);
         // 创建 Runnable 实例对象
-        SwimTrainee trainee = new SwimTrainee();
+        Runnable trainee = new SwimTrainee();
 
         // 从线程池中获取线程对象，然后调用 SwimTrainee 中的 run()
         service.submit(trainee);
