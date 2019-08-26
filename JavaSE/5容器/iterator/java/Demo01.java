@@ -36,75 +36,14 @@ public class Demo01 {
         coll.add("艾弗森");
         System.out.println(coll);   // [姚明, 科比, 麦迪, 詹姆斯, 艾弗森]
 
-        /**
-         * 1.使用集合中的方法 Iterator<E> iterator() 获取迭代器的实现类对象，使用 Iterator 接口接收(多态)
-         *   注意：
-         *     Iterator<E> 也是有泛型的，迭代器的泛型跟着集合走，集合是什么泛型，迭代器就是什么泛型
-         */
-        Iterator<String> it = coll.iterator();
-        System.out.println(it);     // java.util.ArrayList$Itr@2d98a335
+        Iterator<String> iterator = coll.iterator();
+        System.out.println(iterator);     // java.util.ArrayList$Itr@2d98a335
 
         /**
-         * 发现使用迭代器取出集合元素中的代码，是一个重复的过程
-         * 所以我们可以使用循环来优化，不知道集合中有多少个元素，使用 while 循环
-         * 循环结束的条件，hasNext() 方法返回 false
+         * 使用 Lambda 表达式简化迭代器的书写
          */
-        while (it.hasNext()) {
-            String e = it.next();
-            System.out.println(e);
-            /*
-            姚明
-            科比
-            麦迪
-            詹姆斯
-            艾弗森
-             */
-        }
+        iterator.forEachRemaining(element -> System.out.println(element));
 
-        /**
-         * 2.使用集合中 Iterator 接口中的方法 hasNext() 判断还有没有下一个元素
-         */
-//        boolean b = it.hasNext();
-//        System.out.println(b);      // true
-        /**
-         * 3.使用 Iterator 接口中的方法 next() 取出集合中的下一个元素
-         */
-//        String s = it.next();
-//        System.out.println(s);      // 姚明
-//        System.out.println(coll);   // [姚明, 科比, 麦迪, 詹姆斯, 艾弗森]
-//
-//        // 遍历完所有元素，再次调用 hasNext() 方法进行判断
-//        b = it.hasNext();
-//        System.out.println(b);      // true
-//        s = it.next();
-//        System.out.println(s);      // 科比
-//
-//        b = it.hasNext();
-//        System.out.println(b);      // true
-//        s = it.next();
-//        System.out.println(s);      // 麦迪
-//
-//        b = it.hasNext();
-//        System.out.println(b);      // true
-//        s = it.next();
-//        System.out.println(s);      // 詹姆斯
-//
-//        b = it.hasNext();           // true
-//        System.out.println(b);
-//        s = it.next();              // 艾弗森
-//        System.out.println(s);
-//        // 已经遍历完元素，再次调用方法
-//        b = it.hasNext();
-//        System.out.println(b);      // false
-//        System.out.println(coll);   // [姚明, 科比, 麦迪, 詹姆斯, 艾弗森]
-//        // 再取一次，会抛出异常
-//        try {
-//            s = it.next();
-//        } catch (NoSuchElementException e) {
-//            System.err.println(e.getClass().getName() + "：没有匹配的元素异常");
-//            // java.util.NoSuchElementException：没有匹配的元素异常
-//        }
-//
     }
 
 }

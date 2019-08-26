@@ -13,9 +13,11 @@ JSP本质上就是一个Servlet
 ![](img/JSP原理.bmp)
 
 ## JSP的脚本：JSP定义Java代码的方式
-- `<%  代码 %>`：定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。
-- `<%! 代码 %>`：定义的java代码，在jsp转换后的java类的成员位置。
-- `<%= 代码 %>`：定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。
+- `<% 代码
+  %>`：定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么
+- `<%! 代码 %>`：定义的java代码，在jsp转换后的java类的成员位置
+- `<%= 代码
+  %>`：定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么
 
 
 ## JSP的内置对象：
@@ -28,7 +30,7 @@ jsp一共有9个内置对象
 * response
 * out：字符输出流对象。可以将数据输出到页面上。和response.getWriter()类似
 	* response.getWriter()和out.write()的区别：
-	* 在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
+    * 在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据
 	* response.getWriter()数据输出永远在out.write()之前
 
 
@@ -77,8 +79,7 @@ contentType：等同于response.setContentType()
 
 在jsp页面中不需要创建，直接使用的对象
 
-- 一共有9个：
-
+一共有9个：
 
 	变量名			真实类型		    作用
 	* pageContext		PageContext	     当前页面共享数据，还可以获取其他八个内置对象
@@ -91,13 +92,15 @@ contentType：等同于response.setContentType()
 	* config		ServletConfig	     Servlet的配置对象
 	* exception		Throwable	     异常对象
 
-# MVC：开发模式	
+# MVC：开发模式
+	
 ## jsp演变历史
 - 1.早期只有servlet，只能使用response输出标签数据，非常麻烦
-- 2.后来有jsp，简化了Servlet的开发，如果过度使用jsp，在jsp中即写大量的java代码，有写html表，造成难于维护，难于分工协作
+- 2.后来有jsp，简化了Servlet的开发，如果过度使用jsp，在jsp中即写大量的java代码，造成难于维护，难于分工协作
 - 3.再后来，java的web开发，借鉴mvc开发模式，使得程序的设计更加合理性
 
 ## MVC：
+
 - 1.M：`Model`，模型。JavaBean
 	* 完成具体的业务操作，如：查询数据库，封装对象
 - 2.V：`View`，视图。JSP
@@ -220,21 +223,4 @@ JavaServer Pages Tag Library  JSP标准标签库
 1. 界面层(表示层)：用户看的得界面。用户可以通过界面上的组件和服务器进行交互
 2. 业务逻辑层：处理业务逻辑的。
 3. 数据访问层：操作数据存储文件。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,72 +1,314 @@
-##HashSet集合介绍
+# Collection
 
-java.util.HashSet是Set接口的一个实现类，它所存储的元素是不可重复的，并且
-元素都是无序的(即存取顺序不一致)；
+## 概述   
 
-java.util.HashSet底层实现其实是一个java.util.HashMap支持；
+单列集合类的根接口，用于存储一些了符合某种规则的元素，它有两个重要的子接口，分别是：
+- `java.util.List`
+  元素有序、可重复，主要的实现类有`java.util.ArrayList`和`java.util.LinkedList`
+- `java.util.Set` 元素无序、而且不可重复，主要实现类有`HashSet`和`TreeSet`
 
-HashSet是根据对象的“哈希值”来确定元素在集合中的存储位置，因此具有良好的存取和查找性能
+集合的继承体系：
 
-Set集合要保证元素的唯一性，需要元素对象实现“hashCode()”和“equals()”方法
+![](../img/Collcetion继承体系.png)
 
-Set接口的特点：
- *  1.不允许存储重复的元素
- *  2.没有索引，没有带索引的方法，也不能使用普通的for循环遍历，只能用迭代器
- *  3.是一个无序的集合，存储元素和取出元素的顺序可能不一致
- *  4.底层是一个哈希表结构(查询速度非常快)
+## Collection 常用方法
 
-[Set接口实现HashSet类的使用.java](./Set/java/Demo01_Set.java)
+Collection 是所有单列集合的父接口，因此在 Collection
+中定义了单列集合(List和Set)的一些通用方法，这些方法可以用于操作所有的单列集合
 
-## 哈希码值
-哈希值：是一个十进制的整数，由系统随机给出(就是对象的地址值，是一个逻辑地址，是模拟出来得到的地址，不是数据实际存储的物理地址)在Object类中
+- `public boolean add(E e)` 把给定的对象添加到当前集合中
+- `public void clear` 清空集合中的所有元素
+- `public boolean remove(E e)` 把给定的对象在当前集合中删除
+- `public boolean contains(E e)` 判断当前集合中释放包含给定的对象
+- `public boolean isEmpty()` 判断当前集合是否为空
+- `public Object[] toArray` 把集合中的元素，存储到数组当中
 
-有一个方法，可以获取对象的哈希码值
-	
-	int hashCode() 返回该对象的哈希码值
+```java
+/**
+ * 共性方法测试
+ */
+public class Demo01_Collection {
 
-hashCode()方法的源码：
-	
-	public native int hashCode();
-    native：代表着该方法调用的是本地操作系统的方法
+    public static void main(String[] args) {
+        // 创建集合对象，可以使用多态
+        Collection<String> coll = new ArrayList<>();
+        // 重写了toString()方法，返回了一个 []
+        System.out.println(coll);   // []
+
+        /**
+         * public boolean add(E e) 把给定的对象添加到当前集合中
+         * 返回值是一个boolean值，一般都会返回true，所以可以不用接收
+         */
+        boolean b1 = coll.add("张三");
+        System.out.println("b1:" + b1);     // b1:true
+        System.out.println(coll);           // [张三]
+        coll.add("李四");
+        coll.add("王五");
+        coll.add("赵六");
+        coll.add("田七");                     // [张三, 李四, 王五, 赵六, 田七]
+        System.out.println(coll);
+
+        /**
+         * public boolean remove(E e) 把给定的元素在当前集合中删除
+         * 返回值是一个boolean值，集合中存在元素，删除元素，返回true；集合中不存在元素，删除失败，则返回false
+         */
+        boolean b2 = coll.remove("赵六");
+        System.out.println("b2:" + b2);     // b2:true
+        boolean b3 = coll.remove("赵四");
+        System.out.println("b3:" + b3);     // b3:false
+        System.out.println(coll);           // [张三, 李四, 王五, 田七]
+
+        /**
+         * public boolean contains(E e) 判断当前集合中是否包含给定的对象
+         * 包含返回true，不包含则返回false
+         */
+        boolean b4 = coll.contains("李四");
+        System.out.println("b4:" + b4);     // b4:true
+        // 返回一个不存在的
+        boolean b5 = coll.contains("赵四");
+        System.out.println("b5:" + b5);     // b5:false
+
+        /**
+         * public boolean isEmpty()
+         * 判断当前集合是否为空，集合为空返回true，集合不为空则返回false
+         */
+        boolean b6 = coll.isEmpty();
+        System.out.println("b6:" + b6);     // b6:false
+
+        /**
+         * public int size()
+         * 返回集合中元素的个数
+         */
+        int size = coll.size();
+        System.out.println(size);           // 4
+
+        /**
+         * public Object[] toArray()
+         * 把集合中的元素，存储到数组中
+         */
+        Object[] arr = coll.toArray();
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+            /*
+              张三
+              李四
+              王五
+              田七
+            */
+        }
+
+        /**
+         * public void clear()
+         * 清空集合中所有的元素，但是不删除集合，集合还存在
+         */
+        coll.clear();
+        System.out.println(coll);   // []
+    }
+}
+```
+
+# Collections 
+
+## 概述
+
+`java.util.Collections`是集合工具类，用来对集合进行操作，部分方法如下：
+
+- `public static <T> boolean addAll(Collection<T>, T...elements)`
+  往集合中添加一些元素
+
+- `public static void shuffle(List<?> list)` 打乱集合中的顺序
+- `public static <T> void sort(List<?> list)` 将集合中的元素按照默认规则排序
+- `public static <T> void sort(List<T> list, Comparator<? super T)`
+  将集合中的元素按照指定的规则排序
+
+### 添加多个元素
+
+`public static <T> boolean addAll(Collection<T>, T...elements)`
+  往集合中添加一些元素
+  
+> 该方法的参数使用语法糖之一："可变参数"的特性
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Demo01_Collections {
+    public static void main(String[] args) {
+        
+        List<String> list = new ArrayList<>();
+
+        // 使用Collections.addAll(...)方法往集合中添加多个元素
+        Collections.addAll(list, "a","b","c","d"); // [a, b, c, d]
+        System.out.println(list);
+    }
+}
+```
+### 打乱顺序
+`public static void shuffle(List<?> list)` 打乱集合中的顺序
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Demo01_Collections {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+
+        // 使用Collections.addAll(...)方法往集合中添加多个元素
+        Collections.addAll(list, "a","b","c","d");
+        System.out.println(list);  // [a, b, c, d]
+
+        // 使用Collections.shuffle(List<?> list)方法打乱集合中元素的顺序
+        Collections.shuffle(list);
+        System.out.println(list);  // [b, a, c, d]
+    }
+}
+```
+
+## sort 方法对集合进行排序
+
+### `public static <T> void sort(List<?> list)` 
+
+将集合中的元素按照默认规则排序
+
+> 注意：有序集合的意思是存取的顺序，而不是字符的顺序(123ABCadc这样的默认顺序) 
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Demo01_Collections {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+
+        // 使用Collections.addAll(...)方法往集合中添加多个元素
+        Collections.addAll(list, "5","3","1","2","d","D","B","c","a","C","A","b");
+        System.out.println(list);   // [5, 3, 1, 2, d, D, B, c, a, C, A, b]
+
+        // 使用Collection.sort(List<T> list)对list集合进行排序
+        Collections.sort(list);
+        System.out.println(list);   // [1, 2, 3, 5, A, B, C, D, a, b, c, d]
+
+    }
+}
+```
+该方法指定传入的对象类型必须实现`java.lang.Comparable<T>`接口并重写`CompareTo(T o)
+`方法，该方法才能生效，比如当前指定传入的对象类型`String`就重写了该接口，如果自定义的类没有重写该接口则编译器会报错！
+
+### Comparable<T> 接口
+`java.lang.Comparable<T>`接口可以定义类的排序规则
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * 一个实现了 Comparable 接口的类
+ * 重写排序的接口
+ */
+class Demo01_Person implements Comparable<Demo01_Person> {
+
+    private String name;
+    private int age;
     
-[hashCode的测试.java](./Set/java/Demo01_HashCode.java)
-
-## HashSet集合存储数据的结构(哈希表)
-
-哈希表：在JDK1.8之前，哈希表底层采用了“数组+链表”组成，即使用链表处理冲突，同一hash值的链表都存储在
-一个链表里。但是当一个集合的元素较多时，即hash值相等的元素较多时，通过key值依次查找的效率较低，而JDK1.8中
-哈希表采用了“数组+链表+红黑树”组成，当链表长度超过了阈值(8)时，会将链表转换为红黑树，这样就大大减少了查找时间；
-	
-
-![](../img/哈希表.png)
-
-存储流程：
-
-![](../img/哈希流程图.png)
-
-总之而言，JDK1.8引入红黑树大程度优化了HashMap的性能，那么对于我们来讲保证HashSet集合元素的唯一性，其实是根据
-对象的HashCode()和equals()方法来决定的，如果我们往集合中存放自定义的对象，那么保证其唯一，就必须复写hashCode()
-和equals()方法建立当前对象的比较方式；
-![](../img/06_Set集合存储元素不重复的原理.bmp)
-
-[HashSet集合存储数据的不重复性测试.java](./Set/java/Demo02_Set.java)
-
-![](../img/05_HashSet集合存储数据的结构（哈希表）.bmp)
-
-## HashSet存储自定义类型的元素
-
-给HashSet中存放自定义类型元素时，需要重写对象中hashCode()和equals()方法，建立自己比较方式，
-才能保证HashSet集合中的对象唯一性；
-
-[自定义类是否重写hashCode()和equals()方法的比较.java](./Set/java/Demo03_Set.java)
-
-## LinkedHashSet
-
-我们知道HashSet保证了元素的唯一性，可是元素存放进去是没有顺序的，那么我们要保证有序，该怎么办？
-在HashSet下面有一个子类java.util.LinkedHashSet，它是链表和哈希表组合的一个数据存储结构
-
-[LinkedHashSet与HashSet的比较测试.java](./Set/java/Demo04_Set.java)
+    
+    /**
+     * 务必重写 toString() 方法，否则将返回地址值
+     * @return 返回集合的属性
+     */
+    @Override
+    public String toString() {
+        return "Demo01_Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    /**
+     * 实现排序规则的方法
+     * @param p
+     * @return 返回正负数决定排序规则，如果是0则默认相同不排序，当前为按年龄升序进行排序
+     * 降序：p.getAge() - this.getAge()
+     */
+    @Override
+    public int compareTo(Demo01_Person p) {
+        return this.getAge() - p.getAge();
+    }
+}
 
 
+public class Collections {
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+
+        // 使用Collections.addAll(...)方法往集合中添加多个元素
+        Collections.addAll(list,
+                new Person("王刚",21),
+                new Person("王云",18),
+                new Person("王宏",25));
+
+        System.out.println(list);
+        // [Person{name='王刚', age=21}, Person{name='王云', age=18}, Person{name='王宏', age=25}]
+
+        Collections.sort(list);
+        System.out.println(list);
+        // [Person{name='王云', age=18}, Person{name='王刚', age=21}, Person{name='王宏', age=25}]
+
+    }
+}
+
+```
 
 
+### `public static <T> void sort(List<T> list, Comparator<? super T)`
+
+将集合中的元素按照指定的规则排序
+
+与`Comparable<T o>`方法的区别：
+
+- Comparable：自己(this)和别人(参数)比较，自己需要实现 Comparable
+  接口，重写比较的规则 comparaTo() 方法<br>
+- Comparator：相当于找一个第三方的裁判，比较两个
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Collections {
+
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+
+        // 使用Collections.addAll(...)方法往集合中添加多个元素
+        Collections.addAll(list,
+                new Person("王刚", 21),
+                new Person("王云", 18),
+                new Person("王宏", 25));
+        System.out.println(list);
+
+        Collections.sort(list, new Comparator<Demo01_Person>() {
+
+            @Override
+            public int compare(Person p1, Person p2) {
+//                return p1.getAge() - p2.getAge(); // 按照年龄“升序”排序
+//                return p2.getAge() - p1.getAge(); // 按照年龄“降序”排序
+                return 0;   // 不排序
+
+            }
+        });
+
+        System.out.println(list);
+    }
+}
+
+```
