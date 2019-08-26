@@ -12,29 +12,29 @@
 
   - [变量](JavaSE/1变量与数据类型/变量/Interview.md) 
   
-   - 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
+    - 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
 		
   - [常量](JavaSE/1变量与数据类型/常量/Interview.md)
   
-	- char型变量能不能存储一个中文汉字？为什么？
+    - char型变量能不能存储一个中文汉字？为什么？
 		
   - [数据类型](JavaSE/1变量与数据类型/数据类型/Interview.md)
 	
-	- 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
+    - 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
     - 引用类型是占用几个字节
     - 不同的数据类型的转换有哪些规则
     - 强制类型转换的注意事项
 		
   - [包装类](JavaSE/1变量与数据类型/包装类/Interview.md)
   
-	- 为什么需要包装类
+    - 为什么需要包装类
     - 基本数据类型与包装类的区别
 
 - Java运算与控制流程
 	
   - [运算符](JavaSE/2Java运算与控制流程/1.运算符/Interview.md)
 	
-	- "4&5" "4^5" "4|5" "4&10 >> 1"各等于多少
+    - "4&5" "4^5" "4|5" "4&10 >> 1"各等于多少
     - 说说 && 于 & 的区别
     - short s1 = 1，s1 = 1 + 1有什么错吗？或者short s1 = 1，s1 += 1有什么错吗?
     - 用最有效率的方法算出 2 * 8 等于几
@@ -46,12 +46,12 @@
 		
   - [方法](JavaSE/2Java运算与控制流程/3.方法/Interview.md)
     
-	- 值传递和引用传递有哪些区别
+    - 值传递和引用传递有哪些区别
     - 局部变量使用前需要显式地赋值，否则编译通过不了，为什么这么设计
 		
   - [Math数学运算类](JavaSE/2Java运算与控制流程/4.Math数学运算类/Interview.md)
     
-	- Math.round(-2.5)等于多少
+    - Math.round(-2.5)等于多少
   
   - [BigDecimal精度运算类](JavaSE/2Java运算与控制流程/5.BigDecimal精度运算类/Interview.md)
 	
@@ -74,11 +74,12 @@
     
   - [static静态关键字](JavaSE/3面向对象/static静态关键字/Interview.md)
 	
-	- static 关键字有哪些作用
+    - static 关键字有哪些作用
     - 使用 static 关键字的四种使用情况
     - static 与 final 结合使用表示什么意思？
     
   - [final不可变关键字](JavaSE/3面向对象/final不可变关键字/Interview.md)	
+  
     - 什么是不可变类?	
     - 使用 final 关键字修饰一个变量时，是引用不能变？还是引用的对象不能变	-
     
@@ -89,9 +90,9 @@
   - [内部类]
 	
 - 基本API
-  -[Object根类](JavaSE/4基本API/Object根类/Interview.md)
+  - [Object根类](JavaSE/4基本API/Object根类/Interview.md)
 	
-	- ==与equals的区别
+    - ==与equals的区别
     - 为什么规定重写 equals() 就一定要重写 hashCode() 方法
     - 两个对象的hashCode相同，则equals也一定为true吗？
 		
@@ -107,7 +108,7 @@
 	
   - [String字符串类](JavaSE/4基本API/String字符串类/Interview.md)
 	
-	- String、StringBuffer和StringBuilder的区别
+    - String、StringBuffer和StringBuilder的区别
 		
   - Format字符串格式化类
 	
@@ -123,25 +124,25 @@
   
   - [Iterator迭代器](JavaSE/5容器/iterator/Interview.md)
 	
-	- ConcurrentModificationException异常出现的原因
+    - ConcurrentModificationException异常出现的原因
 		
   - 单列集合Collection
 	
-	- [List](JavaSE/5容器/2.单列集合Collection/List/Interview.md)
+    - [List](JavaSE/5容器/2.单列集合Collection/List/Interview.md)
 		
-    - ArrayList和LinkedList的区别	
-    - ArrayList和Vector的比较
+      - ArrayList和LinkedList的区别	
+      - ArrayList和Vector的比较
 			
-  - [Set](JavaSE/5容器/2.单列集合Collection/Set/Interview.md)
+    - [Set](JavaSE/5容器/2.单列集合Collection/Set/Interview.md)
 		
-	- HashSet与TreeSet的比较
+      - HashSet与TreeSet的比较
 			
-  - [映射表Map](JavaSE/5容器/3.映射表Map/Interview.md)
+    - [映射表Map](JavaSE/5容器/3.映射表Map/Interview.md)
 	
-    - HashMap和ConcurrentHashMap的区别 
-    - HashTable和ConcurrentHashMap的区别
-    - 如何让Map集合保证线程安全又效率高
-    - 怎么样让HashMap同步
+      - HashMap和ConcurrentHashMap的区别 
+      - HashTable和ConcurrentHashMap的区别
+      - 如何让Map集合保证线程安全又效率高
+      - 怎么样让HashMap同步
 		
 	
 - IO数据的处理
@@ -192,7 +193,6 @@
 
 
 ## JavaEE
-
 
 - [JavaEE概述](JavaEE/src/main/directory/JavaEE概述/Interview.md)
 
