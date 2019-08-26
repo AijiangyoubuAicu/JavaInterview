@@ -106,6 +106,17 @@ Java程序开发三步骤：编写、编译、运行。
 - `java` 进入java源文件的目录：java 类名字
 - `javac` 编译：java源文件名.java
 
+
+        一些 doc 命令行： 
+            dir 列出当面目录下的文件及文件夹
+            md 创建目录
+            rd 删除目录
+            cd 进入指定目录
+            cd.. 退回到上一级目录
+            cd/ 退回到根目录
+            del 删除文件
+            exit 退出doc命令行
+
 ### 编译 Compile 与运行 Run
 
 编译：是指将我们编写的**Java源文件**翻译成JVM认识的**class**文件，在这个过程中， **javac编译器**会检查我们
@@ -278,6 +289,8 @@ Java中为该类提供了非常丰富的API以操作字符串
 ------
 
 [回到顶部](#Java基本常识)
+
+[面试题](Interview.md)
 
 [返回上一页](../../KnowledgePoint.md)
 

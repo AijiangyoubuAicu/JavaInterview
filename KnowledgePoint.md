@@ -17,12 +17,12 @@
 
 - [Java基本常识与知识海概述](JavaSE/0Java基本常识/ReadMe.md)
 
-- [变量与数据类型](JavaSE/1变量与数据类型/ReadMe.md)
+- 变量与数据类型
 
-  - 变量
-  - 常量
-  - 数据类型
-  - 包装类
+  - [变量](JavaSE/1变量与数据类型/变量/ReadMe.md)
+  - [常量](JavaSE/1变量与数据类型/常量/ReadMe.md)
+  - [数据类型](JavaSE/1变量与数据类型/数据类型/ReadMe.md)
+  - [包装类](JavaSE/1变量与数据类型/包装类/ReadMe.md)
 
 - [Java运算与控制流程](JavaSE/2Java运算与控制流程)
 

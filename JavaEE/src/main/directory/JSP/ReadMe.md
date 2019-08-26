@@ -1,7 +1,7 @@
 # JSP
 ## 概念：
 
-Java Server Pages： java服务器端页面
+JSP：即Java Server Pages，sun公司制定的一种服务端动态页面技术规范
 
 * 可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码
 * 用于简化书写！！！
