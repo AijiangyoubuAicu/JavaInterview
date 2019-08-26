@@ -1,3 +1,5 @@
+# Java创建多线程
+
 # 创建线程方式一：Thread 类
 
 Java 使用`java.lang.Thread`类代表**线程**，所有的程序对象都必须是 Thread 类或子类的实例，每个线程的作用是完成一定的任务，实际上就是执行一段**线程流**即一段顺序的代码；Java使用线程的执行体来代表这线程流；
@@ -147,3 +149,12 @@ public class Demo02_Runnable {
     }
 }
 ```
+------
+
+[面试题](Interview.md)
+
+[下一章节](../线程同步与安全/ReadMe.md)
+
+[回到顶部](#Java创建多线程)
+
+[返回上一页](../../KnowledgePoint.md)
