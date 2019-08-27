@@ -25,26 +25,26 @@
 	
 ### 增
 		
-		CREATE DATABASE [ IF NOT EXISTS] 数据库名 数据库选项;
+	CREATE DATABASE [ IF NOT EXISTS] 数据库名 数据库选项;
 		数据库选项：
 		CHARACTER SET charset_name // 指定字符编码集
 		COLLATE collation_name  // 指定字符校准集
                 
 ### 删
 		
-		DROP DATABASE[ IF EXISTS] 数据库名; 
-		// 同时删除该数据库相关的目录及其目录内容
+	DROP DATABASE[ IF EXISTS] 数据库名; 
+	// 同时删除该数据库相关的目录及其目录内容
 	
 ### 改
 		
-		ALTER DATABASE 库名 选项信息;
+	ALTER DATABASE 库名 选项信息;
 	
 ### 查
 	
-		SELECT DATABASE();                  // 查看当前数据库
-		SELECT NOW(),USER(),VERSION();      // 显示当前时间、用户名、数据库版本
-		SHOW DATABASES[ LIKE 'PATTERN'];    // 查看已有库
-		SHOW CREATE DATABASE 数据库名;       // 查看当前库信息
+	SELECT DATABASE();                  // 查看当前数据库
+	SELECT NOW(),USER(),VERSION();      // 显示当前时间、用户名、数据库版本
+	SHOW DATABASES[ LIKE 'PATTERN'];    // 查看已有库
+	SHOW CREATE DATABASE 数据库名;       // 查看当前库信息
 	
 
 ## 选项信息
