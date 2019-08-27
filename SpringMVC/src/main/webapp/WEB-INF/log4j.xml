@@ -17,15 +17,17 @@
 -->
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://jakarta.apache.org/log4j/ ">
   <!--
     - This is a sample configuration for log4j.
     - It simply just logs everything into a single log file.
     - Note, that you can use properties for value substitution.
     -->
   <appender name="CORE" class="org.apache.log4j.FileAppender">
-    <param name="File"   value="${org.apache.cocoon.work.directory}/cocoon-logs/log4j.log" />
-    <param name="Append" value="false" />
+    <param name="File" value="${org.apache.cocoon.work.directory}/cocoon-logs/log4j.log"/>
+    <param name="Append" value="false"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="%d %-5p %t %c - %m%n"/>
     </layout>

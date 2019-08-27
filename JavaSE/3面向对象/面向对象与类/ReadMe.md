@@ -204,6 +204,8 @@ public class ClassName implements Serializable {
     // 重写equals()与hashCode()【推荐】
 }
 ```
+> 实际开发中上面的所有元素我们都要重写！
+
 
 ------
 

@@ -30,24 +30,25 @@
   </build>
 
   <dependencies>
+    <!-- spring核心框架 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>4.3.9.RELEASE</version>
     </dependency>
-
+    <!-- junit单元测试 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
-    <!-- mybatis -->
+    <!-- mybatis框架 -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>3.5.1</version>
     </dependency>
-    <!-- mybatis-spring -->
+    <!-- mybatis-spring整合框架 -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
@@ -58,21 +59,25 @@
       <artifactId>spring-jdbc</artifactId>
       <version>4.3.9.RELEASE</version>
     </dependency>
+    <!-- mysql连接 -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.16</version>
     </dependency>
+    <!-- 数据库连接池 -->
     <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.4</version>
     </dependency>
+    <!-- Thymeleaf模板引擎 -->
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
       <version>3.0.11.RELEASE</version>
     </dependency>
+    <!-- Thymeleaf模板引擎与spring整合 -->
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf-spring4</artifactId>
