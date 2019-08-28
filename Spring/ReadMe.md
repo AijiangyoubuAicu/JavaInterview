@@ -66,7 +66,7 @@ package cn.aijiang.spring;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.factory.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloWorldTest {
@@ -89,7 +89,7 @@ public class HelloWorldTest {
         ctx.close();
     }
 
-    @Test
+    @factory.Test
     public void testDemoBean() {
         // 通过 getBean 方法获取一个bean
         HelloWorld b2 = ctx.getBean("HelloWorld", HelloWorld.class);
@@ -331,9 +331,6 @@ Spring从两个角度来实现自动化装配：
 
 - 组件装配(component scannning)：Spring会自动发现应用上下文中所创建的bean
 - 自动装配(autowiring):Spring自动满足bean之间的依赖
-
-
-
 
 
 ### 应用切面

@@ -8,6 +8,7 @@
 - 离散数学
 - 计算机组成原理
 - 操作系统
+	- [Linux](计算机专业课程/src/dir/OperatingSystem/linux/Linux概述/ReadMe.md)
 - 计算机网络原理
 	- [HTTP]
 	- [TCP/IP]
@@ -98,9 +99,14 @@
 - [设计模式概述](设计模式/ReadMe.md)
 	- 创建者型模式
 		- [单例模式](设计模式/创建型模式/单例模式/ReadMe.md)
-		- [工厂模式]
+		- [工厂模式](设计模式/创建型模式/工厂模式/ReadMe.md)
 		- [建造者模式]
 		- 原型模式
+	- 结构型模式
+		- 建造者模式
+	- 行为型模式
+		- 策略模式
+		- 观察者模式
 
 ## Web前端
 
@@ -129,22 +135,37 @@
 - [Filter 过滤器](JavaEE/src/main/directory/Filter与Listener/ReadMe.md)
 - [Listener 监听器](JavaEE/src/main/directory/Filter与Listener/ReadMe.md)
 
-## SSM
+## 工具
+
+- [Git 分布式版本控制工具]
+- [Maven 项目管理工具]
+- [Docker 容器]
+
+## SSM 整合框架
 
 - [Spring框架](Spring/ReadMe.md)
-
-- [SpringMVC框架]
-
-- [Mybatis框架]
+	- [Spring框架原理分析](Spring/springIOC原理解析.md)
+- [SpringMVC 框架]
+- [Mybatis 框架]
+- [Spring Boot 框架]
 
 ## SSH
 
-- Struts2框架
+- Struts2 框架
+- Hibernate 框架
 
-- Hibernate框架
+## 技术学习等待队列
 
-## 新框架
-
-- [Spring Boot 框架] 
-
-- Spring Data JPA框架
+- 微服务技术
+	- Spring Cloud
+- 分布式框架
+	- PRC
+	- Zookeeper
+	- Dubbo
+- 消息队列
+	- RabbitMQ
+	- Kafka
+- 负载均衡
+	- Nginx
+- 网络技术
+	- Netty

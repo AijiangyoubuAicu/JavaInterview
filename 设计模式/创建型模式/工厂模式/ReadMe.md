@@ -27,7 +27,7 @@
 - 抽象产品角色：简单工厂模式所创建的所有对象的超类，它负责描述所有实例所公有的公共接口
 - 具体产品角色：简单工厂模式的创建目标，所有创建的对象都是充当这个角色的具体类的实例
 
-(1) 创建抽象产品角色(Shape 接口)：
+(1) 创建抽象产品角色(factory.Shape 接口)：
 ```java
 /**
  * 形状接口
@@ -40,7 +40,7 @@ public interface Shape {
 }
 ```
 
-(2) 创建具体产品角色(实现 Shape 接口的实现类)
+(2) 创建具体产品角色(实现 factory.Shape 接口的实现类)
 
 - 圆形
 
@@ -210,6 +210,290 @@ public class Test {
 2.**具体工厂**角色：这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建某一种产品对象<br>
 3.**抽象产品**角色：工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口<br>
 4.**具体产品**角色：这个角色实现了抽象产品角色所定义的接口，某具体产品由专门的具体工厂创建，它们之间往往一一对应
+
+```java
+/**
+ * 形状接口
+ * 拥有一个图画的功能
+ *
+ * 该类是“抽象产品角色”
+ */
+public interface Shape {
+    void draw();
+}
+```
+```java
+/**
+ * 圆形
+ * 具体产品角色之一
+ */
+public class Circle implements Shape {
+
+    public Circle() {
+        System.out.println("圆形");
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("画一个圆");
+    }
+}
+
+/**
+ * 长方形
+ * 具体产品角色之一
+ */
+public class Rectangle implements Shape {
+
+    public Rectangle() {
+        System.out.println("长方形");
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("画了一个长方形");
+    }
+}
+
+/**
+ * 正方形
+ * 具体产品角色之一
+ */
+public class Square implements Shape {
+
+    public Square() {
+        System.out.println("正方形");
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("画了一个正方形");
+    }
+}
+```
+
+```java
+/**
+ * 工厂接口
+ * 抽象工厂角色
+ */
+public interface Factory {
+    Shape getShape();
+}
+```
+
+```java
+/**
+ * 圆形工厂类
+ * 具体工厂角色之一
+ */
+public class CircleFactory implements Factory {
+
+    @Override
+    public Shape getShape() {
+        return new Circle();
+    }
+}
+
+/**
+ * 长方形工厂类
+ * 具体工厂角色之一
+ */
+public class RectangleFactory implements Factory {
+
+    @Override
+    public Shape getShape() {
+        return new Rectangle();
+    }
+}
+
+/**
+ * 正方形工厂类
+ * 具体工厂角色之一
+ */
+public class SquareFactory implements Factory {
+    
+    @Override
+    public Shape getShape() {
+        return new Square();
+    }
+}
+```
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        Factory circleFactory = new CircleFactory();
+        Shape circle = circleFactory.getShape();
+        circle.draw();
+    }
+}
+```
+
+## 抽象工厂模式
+
+### 概述
+在工厂方法模式中，其实我们还有一个潜在问题，那就是我们生产的都是同一类产品，抽象工厂模式是工厂方法的
+进一步深化，在这个模式中的工厂类不单单只可以创建一种产品，而是可以创建一组产品
+
+### 使用场景
+- 和工厂方法一样，客户端不需要知道它所创建的对象的类
+- 需要一组对象共同完成某种功能时，并且可能存在多组对象完成不同的功能的情况(同属于同一产品族的产品)
+- 系统结构稳定，不会频繁的增加对象(因为一旦增加就需要修改原有代码，不符合开闭原则)
+
+### 抽象工厂模式角色分配
+- **抽象工厂**角色：工厂方法的核心，与应用程序无关，任何在模式中创建的对象的工厂类必须实现这个结果
+- **具体工厂**角色：实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建某一个产品对象
+- **抽象产品**角色：工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口
+- **具体产品**角色：抽象工厂模式所创建的任何产品对象都是某一个具体产品类的实例。在抽象工厂中创建的产品属于同一产品族，这不同于工厂模式中的工厂只创建单一产品
+
+(1) 抽象产品角色的创建
+```java
+/**
+ * 枪，拥有开火的功能
+ * 抽象产品类
+ */
+public interface Gun {
+    void shooting();
+}
+
+/**
+ * 子弹，拥有装填的功能
+ * 抽象产品类
+ */
+public interface Bullet {
+    void load();
+}
+```
+
+(2) 具体产品角色的实现
+
+```java
+/**
+ * 枪的实现类之一：AK
+ * 具体产品类
+ */
+public class AK implements Gun {
+
+    @Override
+    public void shooting() {
+        System.out.println("使用AK进行射击");
+    }
+}
+
+/**
+ * 枪的实现类之一：M4A1
+ * 具体产品类
+ */
+public class M4A1 implements Gun {
+
+    @Override
+    public void shooting() {
+        System.out.println("用M4A1进行射击");
+    }
+}
+
+/**
+ * 子弹的具体实现类之一：AK的子弹
+ * 具体产品
+ */
+public class AK_Bullet implements Bullet {
+
+    @Override
+    public void load() {
+        System.out.println("装填子弹进AK中");
+    }
+
+}
+
+/**
+ * 子弹的实现类之一：M4A1的子弹
+ * 具体产品类
+ */
+public class MA41_Bullet implements Bullet {
+
+    @Override
+    public void load() {
+        System.out.println("装填子弹进M4A1中");
+    }
+
+}
+```
+
+(3) 抽象工厂的创建
+
+```java
+/**
+ * 抽象工厂接口
+ * 它拥有一套产品的方法
+ */
+public interface Factory {
+    Gun produceGun();
+    Bullet produceBullet();
+}
+```
+
+(4) 具体工厂的实现
+
+```java
+/**
+ * 具体生产AK及其子弹的工厂
+ */
+public class AKFactory implements Factory {
+
+    @Override
+    public Gun produceGun() {
+        return new AK();
+    }
+
+    @Override
+    public Bullet produceBullet() {
+        return new AK_Bullet();
+    }
+}
+
+/**
+ * 具体生产M4A1及其子弹的工厂
+ */
+public class M4A1Factory implements Factory {
+    @Override
+    public Gun produceGun() {
+        return new M4A1();
+    }
+
+    @Override
+    public Bullet produceBullet() {
+        return new MA41_Bullet();
+    }
+}
+```
+
+(5) 测试
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        /**
+         * 通过AK工厂我们可以得到一套产品
+         */
+        Factory factory = new AKFactory();
+        Gun ak = factory.produceGun();
+        Bullet ak_bullet = factory.produceBullet();
+        ak.shooting();
+        ak_bullet.load();
+
+        /**
+         * 另一个工厂生产的来一套产品
+         */
+        Factory factory1 = new M4A1Factory();
+        Gun m4a1 = factory1.produceGun();
+        Bullet m4a1_bullet = factory.produceBullet();
+        m4a1.shooting();
+        m4a1_bullet.load();
+
+    }
+}
+```
 
 
 

@@ -1,3 +1,5 @@
+package factory;
+
 /**
  * 正方形
  * 具体产品角色之一

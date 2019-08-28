@@ -37,7 +37,7 @@ public @interface Anno {
 ```java
 // 创建一个类在类定义上以 @ 符号添加该注解即可
 @Anno
-public class Test {
+public class factory.Test {
     
 }
 ```

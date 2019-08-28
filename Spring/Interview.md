@@ -7,7 +7,7 @@
 - Spring 框架中单例 Bean 是线程安全的吗？
 - Spring 中的依赖注入是什么？
 - Spring IoC 容器是什么？IoC 有什么优点？
-- Bean Factory 和 ApplicationContext 有什么区别？
+- Bean factory.Factory 和 ApplicationContext 有什么区别？
 - IoC 和 DI 的区别？
 - 有哪些不同类型的依赖注入（IoC）？
 - 什么是 Bean wiring（Bean 装配）？
@@ -99,7 +99,7 @@ IoC 容器负责`创建` Bean、`管理` Bean 之间的`依赖关系`（通过�
 IOC 或依赖注入减少了应用程序的代码量。它使得应用程序的测试很简单，因为在单元测试中不再需
 要单例或 JNDI 查找机制。简单的实现以及较少的干扰机 制使得松耦合得以实现。IOC 容器支持`勤性单例`及`延迟加载`服务。
 
-## Bean Factory 和 ApplicationContext 有什么区别？
+## Bean factory.Factory 和 ApplicationContext 有什么区别？
 
 (1) Spring 容器最基本的接口就是 `BeanFactory`。BeanFactory 负责配置、创建、管理 Bean，它有一个子接口：`ApplicationContext`，因此也被称为 `Spring上下文`。
 

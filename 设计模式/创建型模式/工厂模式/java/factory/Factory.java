@@ -1,4 +1,4 @@
-import java.awt.*;
+package factory;
 
 /**
  * 工厂接口

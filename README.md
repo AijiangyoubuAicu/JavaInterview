@@ -13,34 +13,38 @@ JavaInterview是用来学习Java基础知识点并辅于面试题进一步加深
 ## 近期待添加
 
 - 数据库参考代码(正在进行)
-- 建造者设计模式(正在进行)
-- 结构型模式
-	- 静态与动态代理设计模式(正在进行)
-	- 适配器设计模式(正在进行)
-- 行为型模式
-	- 策略设计模式(正在进行)
 - SpringMVC知识点(正在进行)
 - SpringMVC工作流程(正在进行)
+- 建造者设计模式
+- 结构型模式
+	- 静态与动态代理设计模式
+	- 适配器设计模式
+- 行为型模式
+	- 策略设计模式
 - MyBatis知识点
 - MyBatis工作原理
 - SpringBoot知识点
 - SpringBoot工作原理
-- 电商项目模块化代码分离
 - 计算机网络原理
-	- HTTP
-	- TCP/IP
+	- HTTP(正在进行)
+	- TCP/IP(正在进行)
 - Java算法之排序
 	- 插入排序
 	- 冒泡排序
 	- 选择排序
 	- 快速排序
 - Java算法之递归
-- 操作系统
-	- Linux 系统(正在进行)
 - JVM概述
+- Web前端
+	- JavaScript
+	- JQuery
+	- Ajax/Json
+	- Vue
 - Java编程规范
 - Redis 数据库
 - Maven 项目管理
+- 电商项目模块化代码分离
+- 基于 HTTP 协议的小型服务器案例
 
 ## 添加队列
 
@@ -48,12 +52,8 @@ JavaInterview是用来学习Java基础知识点并辅于面试题进一步加深
 - 正则表达式
 - Pattern 正则表达式类
 - NIO 缓存流
-- Dubbo 分布式服务框架
-- ZooKeeper 分布式锁
 - Docker 容器化
-- Spring Cloud 微服务框架
 - Spring Data JPA ORM框架
-- RabbitMQ 消息队列
 - 计算机操作系统(参考资料：《现代操作系统 原书第四版》)
 	- 进程与线程
 	- 内存管理

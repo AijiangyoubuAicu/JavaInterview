@@ -169,7 +169,7 @@ package cn.aijiang.spring;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.factory.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloWorldTest {
@@ -192,7 +192,7 @@ public class HelloWorldTest {
         ctx.close();
     }
 
-    @Test
+    @factory.Test
     public void testDemoBean() {
         // 通过 getBean 方法获取一个bean
         HelloWorld b2 = ctx.getBean("HelloWorld", HelloWorld.class);

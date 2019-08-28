@@ -284,3 +284,166 @@ public class Demo01_KeySet {
     }
 }
 ```
+## HashMap 存储自定义类
+
+一个普通的 JavaBean ，未重写 hashCode() 和 equals() 方法
+
+```java
+import java.io.Serializable;
+
+/**
+ * 未重写的 hashCode() 和 equals() 方法的类
+ */
+public class Person_norewrite implements Serializable {
+
+    private static final long serialVersionUID = -2771779762477937721L;
+
+    private String name;
+    private Integer age;
+
+    public Person_norewrite() {
+    }
+
+    public Person_norewrite(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person_norewrite{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+}
+
+```
+
+测试有重写(String)和不重写(Person_norewrite)的情况：
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * HashMap 存储自定义类型键值时，要保证 key 值是唯一的
+ *
+ * 保证 key 值是唯一的条件：作为 key 的元素必须重写 hashCode() 和 equals() 方法，以保证 key 唯一
+ */
+public class Demo01_HashMap {
+    public static void main(String[] args) {
+//        show01();
+        show02();
+    }
+
+    /**
+     * 测试 key 值有重写 hashCode() 和 equals() 方法
+     *
+     * key 为 String 类型
+     * 但它有重写 hashCode() 和 equals() 方法，所以第二个"北京"会覆盖第一个值
+     */
+    private static void show01() {
+        // 创建 HashMap 集合
+        Map<String, Person_norewrite> map = new HashMap<>();
+        // 往集合中添加元素
+        map.put("北京", new Person_norewrite("张三", 18));
+        map.put("上海", new Person_norewrite("李四", 19));
+        map.put("广州", new Person_norewrite("王五", 20));
+        map.put("北京", new Person_norewrite("赵六", 18));
+        // 使用 keySet 加增强 foreach 遍历 Map 集合
+        Set<String> set = map.keySet();
+        for (String key : set) {
+            Person_norewrite value = map.get(key);
+            System.out.println(key + ":" + value);
+        }
+    }
+
+    private static void show02() {
+        // 创建 HashMap 集合
+        Map< Person_norewrite, String> map = new HashMap<>();
+        // 往集合中添加元素
+        map.put(new Person_norewrite("张三", 18), "北京");
+        map.put(new Person_norewrite("李四", 19), "上海");
+        map.put(new Person_norewrite("王五", 20), "广州");
+        map.put(new Person_norewrite("赵六", 18), "北京");
+        map.put(new Person_norewrite("王五", 20), "北京");
+        // 使用 keySet 加增强 foreach 遍历 Map 集合
+        Set<Person_norewrite> set = map.keySet();
+        for (Person_norewrite key : set) {
+            String value = map.get(key);
+            System.out.println(key + ":" + value);
+        }
+        /* 存在重复值：
+        Person_norewrite{name='张三', age=18}:北京
+        Person_norewrite{name='赵六', age=18}:北京
+        Person_norewrite{name='王五', age=20}:广州
+        Person_norewrite{name='王五', age=20}:北京
+        Person_norewrite{name='李四', age=19}:上海
+        */
+
+    }
+}
+
+```
+
+该情况与 HashSet 存储唯一的值的原理是相同的；
+
+## LinkedHashMap
+
+`java.util.LinkedHashMap<K, V>` extends HashMap<K, V>
+
+Map 接口由哈希表和链表实现，具有可预知的迭代器顺序，底层实现：
+**哈希表 + 链表**(链表用于记录元素的顺序)
+
+```java
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * HashMap 存储自定义类型键值时，要保证 key 值是唯一的
+ *
+ * 保证 key 值是唯一的条件：作为 key 的元素必须重写 hashCode() 和 equals() 方法，以保证 key 唯一
+ */
+public class Demo01_HashMap {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("a", "a");
+        map.put("c", "c");
+        map.put("b", "b");
+        map.put("a", "d");
+        // key 值不允许重复，无序集合
+        System.out.println(map);    // {a=d, b=b, c=c}
+
+        Map<String, String> linked = new LinkedHashMap<>();
+        linked.put("a", "a");
+        linked.put("c", "c");
+        linked.put("b", "b");
+        linked.put("a", "d");
+        // key 值不允许重复，有序集合
+        System.out.println(linked); // {a=d, c=c, b=b}
+
+    }
+}
+
+```
+
+> 请注意：此处的有序说的是存取顺序一致！

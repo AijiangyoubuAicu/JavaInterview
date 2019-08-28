@@ -251,7 +251,7 @@
   - Spring 框架中单例 Bean 是线程安全的吗？
   - Spring 中的依赖注入是什么？
   - Spring IoC 容器是什么？IoC 有什么优点？
-  - Bean Factory 和 ApplicationContext 有什么区别？
+  - Bean factory.Factory 和 ApplicationContext 有什么区别？
   - IoC 和 DI 的区别？
   - 有哪些不同类型的依赖注入（IoC）？
   - 什么是 Bean wiring（Bean 装配）？
