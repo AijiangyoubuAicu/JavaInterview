@@ -81,10 +81,7 @@
   - [枚举](JavaSE/8Java高级语法特性/枚举/ReadMe.md)
   - [泛型](JavaSE/8Java高级语法特性/泛型/ReadMe.md)
   - [注解](JavaSE/8Java高级语法特性/注解/ReadMe.md)
-  - 语法糖
-  	- [Lambda]
-  	- [可变参数]
-  	- [foreach循环]
+  - [语法糖](JavaSE/8Java高级语法特性/语法糖/ReadMe.md)
 
 ## JVM
 
@@ -103,7 +100,7 @@
 		- [建造者模式]
 		- 原型模式
 	- 结构型模式
-		- 建造者模式
+		- 代理模式
 	- 行为型模式
 		- 策略模式
 		- 观察者模式
@@ -121,9 +118,10 @@
 ## 数据库
 
 - [数据库系统原理](数据库/1.数据库系统原理)
+- [SQL语法](数据库/3.SQL语法)
 - [MySQL数据库](数据库/2.MySQL)
 - [Oracle数据库]
-- [SQL语法](数据库/3.SQL语法)
+
 
 ## JavaEE
 
@@ -146,7 +144,7 @@
 - [Spring框架](Spring/ReadMe.md)
 	- [Spring框架原理分析](Spring/springIOC原理解析.md)
 - [SpringMVC 框架]
-- [Mybatis 框架]
+- [Mybatis 框架](Mybatis/ReadMe.md)
 - [Spring Boot 框架]
 
 ## SSH

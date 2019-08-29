@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一元运算符</title>
+    <script>
+        // ++ 运算符的前 ++
+        var num = 3;
+        var a = ++ num;
+        document.write("num = " + num + "<br>");   // num = 4
+        document.write("a = " + a + "<br>");     // a = 4
+        // ++ 运算符的后 ++
+        num = 3;
+        a = num ++;
+        document.write("num = " + num + "<br>");   // num = 4
+        document.write("a = " + a + "<br>");     // a = 3
+
+        // + 号的字面量转换
+        var b = + "123abc";
+        document.write("b的类型是：" + typeof b + "<br>");   // b的类型是：number
+        document.write("b + 1 = " +  b + 1 + "<br>");   // b + 1 = NaN1
+        // boolean 值会转换为 0 或 1
+        var flag = + true;
+        var f2 = + false;
+        document.write("flag = " + typeof flag + "<br>");   // flag = number
+        document.write("flag = " + flag + "<br>");  // flag = 1
+        document.write("f2 = " + f2 + "<br>");  // f2 = 0
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

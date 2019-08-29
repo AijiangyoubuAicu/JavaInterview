@@ -21,10 +21,10 @@ JavaInterview是用来学习Java基础知识点并辅于面试题进一步加深
 	- 适配器设计模式
 - 行为型模式
 	- 策略设计模式
-- MyBatis知识点
-- MyBatis工作原理
-- SpringBoot知识点
-- SpringBoot工作原理
+- MyBatis知识点(正在进行)
+- MyBatis工作原理(正在进行)
+- SpringBoot知识点(正在进行)
+- SpringBoot工作原理(正在进行)
 - 计算机网络原理
 	- HTTP(正在进行)
 	- TCP/IP(正在进行)

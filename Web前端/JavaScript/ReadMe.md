@@ -11,7 +11,7 @@
 
 ## 功能：
 
-可以来**增强**用户和html页面的**交互过程**，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。
+可以来**增强**用户和html页面的**交互过程**，可以来控制 html 元素，让页面有一些动态的效果，增强用户的体验
 	
 ## JavaScript发展史：
 
@@ -20,11 +20,11 @@
 	3.1996年，微软抄袭JavaScript开发出JScript语言
 	4.1997年，ECMA(欧洲计算机制造商协会)，制定出客户端脚本语言的标准：ECMAScript，就是统一了所有客户端脚本语言的编码方式。
 
-- JavaScript = ECMAScript + JavaScript自己特有的东西(BOM+DOM)
+- JavaScript = ECMAScript + JavaScript 自己特有的东西(BOM+DOM)
 
-## ECMAScript：客户端脚本语言的标准
+# ECMAScript：客户端脚本语言的标准
 
-### 基本语法：
+## 基本语法：
 
 与html结合方式
 
@@ -39,86 +39,263 @@
 	* 注意：
 		- 1.`<script>`可以定义在html页面的任何地方。但是定义的位置会影响执行顺序
 		- 2.`<script>`可以定义多个
-					
-### 注释
 
-- 单行注释：`//注释内容`
-- 多行注释：`/*注释内容*/`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS与HTML的结合</title>
+    <!-- 内部JS的编写 -->
+    <script>
+        alert("Hello World!这是个内部JS");
+    </script>
+    <!-- 外部JS的引入 -->
+    <script src = "JS/外部JS.js"></script>
 
-### 数据类型：
-
-#### 原始数据类型(基本数据类型)：
-
-- 1.number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)
-- 2.string：字符串。 字符串  "abc" "a" 'abc'
-- 3.boolean: true和false
-- 4.null：一个对象为空的占位符
-- 5.undefined：未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined
-					
-#### 引用数据类型：对象
+</head>
+<body>
+   <h1>Hello JavaScript!</h1>
+</body>
+</html>
+```
 				
-变量
+## 注释
 
-* 变量：一小块存储数据的内存空间
-* Java语言是强类型语言，而JavaScript是弱类型语言。
+- 单行注释：`// 注释内容`
+- 多行注释：`/* 注释内容 */`
+
+## 数据类型：
+
+### 原始数据类型(基本数据类型)：
+
+- 1.`number`：数字；包含 整数 / 小数 / NaN (not a number 一个不是数字的数字类型)
+- 2.`string`：字符串；字符串  "abc" "a" 'abc'
+- 3.`boolean`：true 和 false
+- 4.`null`：一个对象为**空**的占位符
+- 5.`undefined`：未定义；如果一个变量没有给初始化值，则会被默认赋值为 undefined
+				
+### 引用数据类型：对象
+
+ **变量**：一小块**存储数据的内存**空间
+
+- Java 语言是**强类型**语言，而 JavaScript 是**弱类型**语言。
 	* 强类型：在开辟变量存储空间时，定义了空间将来存储的数据的数据类型。只能存储固定类型的数据
 	* 弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。
 	
-* 语法：
+语法：
 
+```javascript
+var 变量名 = 初始化值;
+```
 
-	var 变量名 = 初始化值;
-				
-* typeof运算符：获取变量的类型。
+* `typeof`运算符：获取变量的类型
 
->注：null运算后得到的是object
-					
-### 运算符
-#### 一元运算符
+> 注：null运算后得到的是 object
 
-只有一个运算数的运算符
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
 
-++，-- ， +(正号)  
+    <script>
+        // 定义变量
+        var a = 3;
+        alert(a);
+        a = "abc";
+        alert(a);
 
-++ --: 自增(自减)
+        // 定义 number 类型并输出到页面上
+        var num = 1;
+        var num2 = 1.2;
+        var num3 = NaN;
+        document.write(num + "<br>");
+        document.write(num2 + "<br>");
+        document.write(num3 + "<br>");
 
-	++(--) 在前，先自增(自减)，再运算
-	++(--) 在后，先运算，再自增(自减)
-	
-+(-)：正负号
+        // 定义 String 类型
+        var str = "abc";
+        var str2 = "edf";
+        document.write(str + "<br>");
+        document.write(str2 + "<br>");
 
-- 注意：在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换
-	- 其他类型转number：
-		- string转number：按照字面值转换。如果字面值不是数字，则转为NaN（不是数字的数字）
-		- boolean转number：true转为1，false转为0
+        // 定义 boolean
+        var flag = true;
+        document.write(flag + "<br>");
+
+        // 定义 null, undefined
+        var obj = null;
+        var obj2 = undefined;
+        var obj3;
+        document.write(obj + "<br>");
+        document.write(obj2 + "<br>");
+        document.write(obj3 + "<br>");
+
+        // 使用 typeof 运算符获取变量的类型
+        document.write(obj + " = " + typeof obj + "<br>");
+        document.write(obj2 + " = " + typeof obj2 + "<br>" );
+        document.write(obj3 + " = " + typeof obj3 + "<br>")
+
+    </script>
+    
+</head>
+<body>
+
+</body>
+</html>
+```
 		
-#### 算数运算符
+## 运算符
 
+### 一元运算符
 
-	+ - * / % ...
+只有**一个**运算数的运算符
 
-#### 赋值运算符
+`++`、`--` 、`+(正号)` 、`-(负号)` 
 
+- `++` `--`: 自增(自减)
 
-	= += -+....
+> ++(--) 在前，先自增(自减)，再运算
+> ++(--) 在后，先运算，再自增(自减)
+	
+- `+(-)`：正负号
 
-#### 比较运算符
+>注意：在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换
+>其他类型转number：
+>string转number：按照字面值转换。如果字面值不是数字，则转为NaN（不是数字的数字）
+>boolean转number：true转为1，false转为0
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一元运算符</title>
+    <script>
+        // ++ 运算符的前 ++
+        var num = 3;
+        var a = ++ num;
+        document.write("num = " + num + "<br>");   // num = 4
+        document.write("a = " + a + "<br>");     // a = 4
+        // ++ 运算符的后 ++
+        num = 3;
+        a = num ++;
+        document.write("num = " + num + "<br>");   // num = 4
+        document.write("a = " + a + "<br>");     // a = 3
 
-	< > >= <= == ===(全等于)
+        // + 号的 string 字面量转换为 NaN1，但类型依旧是 number
+        var b = + "123abc";
+        document.write("b的类型是：" + typeof b + "<br>");   // b的类型是：number
+        document.write("b + 1 = " +  b + 1 + "<br>");   // b + 1 = NaN1
 
-* 比较方式
-	- 1.类型相同：直接比较
-		* 字符串：按照字典顺序比较。按位逐一比较，直到得出大小为止。
-	- 2.类型不同：先进行类型转换，再比较
-		* ===：全等于。在比较之前，先判断类型，如果类型不一样，则直接返回false
-					
-#### 逻辑运算符
+        // + 号的 boolean 值字面量会转换为 0 或 1
+        var flag = + true;
+        var f2 = + false;
+        document.write("flag = " + typeof flag + "<br>");   // flag = number
+        document.write("flag = " + flag + "<br>");  // flag = 1
+        document.write("f2 = " + f2 + "<br>");  // f2 = 0
 
+    </script>
+</head>
+<body>
 
-	&& || !
+</body>
+</html>
+```
 
-* 其他类型转boolean：
+		
+### 算数运算符与赋值运算符
+
+- `+`  加法 
+- `-`  减法
+- `*`  乘法
+- `/`  除法
+- `%`  取模
+- `=`  赋值
+- `+=` 加法赋值
+- `-+` 减法赋值
+- `*=` 乘法赋值
+- `/=` 除法赋值
+- `%=` 取模赋值
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本算术运算符</title>
+    <script>
+        var a = 3;
+        var b = 4;
+
+        document.write("a+b = " + (a + b) + "<br>");
+        document.write("a-b = " + (a - b) + "<br>");
+        document.write("a*b = " + (a * b) + "<br>");
+        document.write("a/b = " + (a / b) + "<br>");
+        document.write("a%b = " + (a % b) + "<br>");
+
+    </script>
+</head>
+<body>
+<br>
+<h2>输出结果是：</h2>
+a+b = 7 <br>
+a-b = -1 <br>
+a*b = 12 <br>
+a/b = 0.75 <br>
+a%b = 3 <br>
+</body>
+</html>
+```
+	
+### 比较运算符
+
+- `<`   小于
+- `>`   大于
+- `>=`  大于等于
+- `<=`  小于等于
+- `==`  赋值
+- `===` 全等于
+
+<br>
+比较方式
+- 1.类型相同：直接比较
+	-  字符串：按照**字典顺序**比较。按位逐一比较，直到得出大小为止
+- 2.类型不同：先进行**类型转换**，再比较
+	- ===：全等于；在比较之前，先判断类型，如果类型不一样，则直接返回 false
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>比较运算符</title>
+    <script>
+        document.write("3 > 4 ：" + (3 > 4) + "<br>");
+        document.write(("abc < acd ：") + ("abc" < "acd") + "<br>");
+        document.write(("字符串123 == 123 ：") + ("123" == 123) + "<br>");
+        document.write(("字符串123 === 123 ：") + ("123" === 123) + "<br>")
+    </script>
+</head>
+<body>
+<h2>计算结果为：</h2>
+3 > 4 ：false <br>
+abc < acd ：true <br>
+字符串123 == 123 ：true <br>
+字符串123 === 123 ：false <br>
+</body>
+</html>
+```
+			
+### 逻辑运算符
+
+- `&&` 与(短路) 
+- `||` 或(短路)
+- `!`  非
+
+- 其他类型转 boolean：
 	- 1.number：0或NaN为假，其他为真
 	- 2.string：除了空字符串("")，其他都是true
 	- 3.null&undefined:都是false

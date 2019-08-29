@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Mybatis的基础配置文件，通常只有一个：主要是配置一些最基本的上下文参数和运行环境 -->
+<configuration>
+
+    <!-- 指明 Mybatis 所用的日志的具体实现 -->
+    <settings>
+        <setting name = "logImpl" value = "LOG4J"/>
+    </settings>
+
+    <!-- 定义一个别名 mybatis，它代表着 cn.tedu.mybatis.MyBatis 这个类，
+    这样定义后，在 MyBatis 上下文就可以使用别名去代替全限定名 -->
+    <typeAliases>
+        <typeAlias alias = "mapper" type = "cn.aijiang.mapper.UserMapper" />
+    </typeAliases>
+
+    <!-- 数据库环境设置 -->
+    <environments default = "development">
+        <!-- 配置事务管理器 -->
+        <environment id = "development">
+            <!-- 此处采用的是 MyBatis 的 JDBC 管理器方式 -->
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库 -->
+            <!-- 属性type="POOLED"代表采用 MyBatis 内部连接池方式 -->
+            <dataSource type = "POOLED">
+                <property name = "driver" value = "com.mysql.jdbc.Driver"/>
+                <property name = "url" value = "jdbc:mysql://localhost:3306/aijiangdb?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai" />
+                <property name = "username" value = "root" />
+                <property name = "password" value = "root" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 对应 mapper 映射文件 -->
+    <mappers>
+        <mapper resource = "UserMapper.xml" />
+    </mappers>
+
+</configuration>

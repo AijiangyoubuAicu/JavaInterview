@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 引入的映射器 -->
+<!-- namespace 属性对应了一个接口的全限定名，MyBatis上下文就可以通过它找到对应的接口-->
+<mapper namespace = "cn.aijiang.mapper.UserMapper">
+
+    <!-- 配置实体与数据表的映射 -->
+    <resultMap id = "UserEntityMap" type = "cn.aijiang.entity.User">
+        <id column = "id" property = "id" />
+        <result column = "username" property = "username" />
+        <result column = "password" property = "password" />
+        <result column = "age" property = "age" />
+        <result column = "phone" property = "phone" />
+        <result column = "email" property = "email" />
+        <result column = "is_delete" property = "isDelete" />
+        <result column = "department_id" property = "departmentId" />
+    </resultMap>
+
+    <!-- 查看用户数量 -->
+    <select id = "count" resultType = "java.lang.Integer">
+	    SELECT
+	        COUNT(*)
+	    FROM
+	        user
+    </select>
+
+</mapper>

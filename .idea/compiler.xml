@@ -16,8 +16,8 @@
     <bytecodeTargetLevel>
       <module name="8.SSM" target="1.8" />
       <module name="JavaEE" target="1.7" />
-      <module name="Mybatis" target="1.5" />
-      <module name="Spring" target="1.5" />
+      <module name="Mybatis" target="7" />
+      <module name="Spring" target="6" />
       <module name="SpringMVC" target="1.5" />
       <module name="计算机专业课程" target="1.5" />
     </bytecodeTargetLevel>
