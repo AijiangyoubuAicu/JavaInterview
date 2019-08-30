@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array数组对象</title>
+    <script>
+        // 1.创建对象的方式一
+        var arr1 = new Array(1, 2, 3);
+        // 2.创建数组的方式二
+        var arr2 = new Array(5);
+        // 3.创建数组的方式三
+        var arr3 = [1, 2, 3, 4];
+
+        var arr4 = new Array();
+
+        document.write(arr1 + "<br>");
+        document.write(arr2 + "<br>");
+        document.write(arr3 + "<br>");
+        document.write(arr4 + "<br>");
+
+        document.write("<hr>");
+
+        var arr = [1, "abc", true];
+        document.write("arr = " + arr  + "<br>");
+        document.write("arr[0] = " + arr[0] + "<br>");
+        document.write("arr[1] = " + arr[1] + "<br>");
+        document.write("arr[2] = " + arr[2] + "<br>");
+
+        document.write("arr[10] = " + arr[10] + "<br>");
+
+        arr[10] = "hehe";
+        document.write("arr[10] = " + arr[10] + "<br>");
+        document.write("arr[9] = " + arr[9] + "<br>");
+
+
+
+    </script>
+</head>
+<body>
+    <h2>Array数组对象</h2>
+    1,2,3
+    ,,,,
+    1,2,3,4
+
+    arr = 1,abc,true
+    arr[0] = 1
+    arr[1] = abc
+    arr[2] = true
+    arr[10] = undefined
+    arr[10] = hehe
+    arr[9] = undefined
+</body>
+</html>

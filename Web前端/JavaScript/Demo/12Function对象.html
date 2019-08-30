@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function对象</title>
+    <script>
+        // 1.创建方式1
+        var fun1 = new Function("a", "b", "c", "a;");
+        // 调用方式
+        fun1(3, 4);
+        document.write("fun1 = " + fun1 + "<br>");
+        document.write("fun1().length = " + fun1.length + "<br>");
+
+        // 2.创建方式2
+        var num2 = 0;
+        function fun2(a, b) {
+            a + b;
+        }
+        num2 = fun2(3, 4);
+        document.write("fun2() = " + num2 + "<br>");
+        document.write("fun2().length" + fun2().length + "<br>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

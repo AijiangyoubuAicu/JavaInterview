@@ -300,41 +300,238 @@ abc < acd ：true <br>
 	- 2.string：除了空字符串("")，其他都是true
 	- 3.null&undefined:都是false
 	- 4.对象：所有对象都为true
-	
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS运算符</title>
+    <script>
+
+        var flag = true;
+        document.write("flag = " + flag + "<br>");
+        document.write("flag = " + !flag + "<br>");
+
+        // 除了 0(编译为false) 和 NaN 值，其他均为 true
+        var num = 3;
+        var num3 = 0;
+        var num2 = NaN;
+        document.write("!!num = " + !!num + "<br>");
+        document.write("!!num2 = " + !!num2 + "<br>");
+        document.write("!!num3 = " + !!num3 + "<br>");
+
+        // 任何与 null 和 undefined 的值的“与”操作都是 false
+        var obj = null;
+        var obj2;
+        document.write("!!obj = " + !!obj + "<br>");
+        document.write("!!obj2 = " + !!obj2 + "<br>");
+
+        // 所有对象都是 true
+        var date = new Date();
+        document.write( "!!date = "+ !!date + "<br>");
+
+        // 防止字符串的空指针异常
+        obj = "123";
+        if (obj != null && obj.length > 0) {
+            alert(123);
+        }
+        // 推荐简化写法：
+        if (obj) {
+            alert(123);
+        }
+
+    </script>
+</head>
+<body>
+    <h2>输出结果为：</h2>
+    flag = true<br>
+    flag = false<br>
+    !!num = true<br>
+    !!num2 = false<br>
+    !!num3 = false<br>
+    !!obj = false<br>
+    !!obj2 = false<br>
+    !!date = true<br>
+</body>
+</html>
+```
 				
-#### 三元运算符
+### 三元运算符
 
 ? : 表达式
-					
-	var a = 3;
-	var b = 4;
-	var c = a > b ? 1:0;
-	
+						
 * 语法：
 	* 表达式? 值1:值2;
 	* 判断表达式的值，如果是true则取值1，如果是false则取值2；
-				
-#### 流程控制语句：
+	
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三元运算符</title>
+    <script>
+        var a = 3;
+        var b = 4;
+        var c = a > b ? 1 : 0;
+        document.write("c = " + c + "<br>");
+    </script>
+</head>
+<body>
+    <h2>输出结果为：</h2>
+    c = 0
+</body>
+</html>
+```
+
+### 特殊语法
+- 1.语句以`:`结尾，如果只有一条语句则`:`可以省略
+>虽然有这一特性，但我们还是建议不用省略
+
+
+- 2.变量的定义可以用`var`关键字，也可以不用
+    - 用：定义的变量时局部变量
+    - 不用：定义的变量是全局变量(视为Java的静态变量，但不建议使用)
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特殊语法</title>
+    <script>
+        // 如果一行只有一条语句则 ;可以省略
+        var a = 3
+    </script>
+</head>
+<body>
+    <script>
+        // 变量的定义使用var关键字，用是局部变量，不用是全局变量
+        var b;
+        function fun() {
+            b = 4;
+        }
+        fun();
+        alert(b);
+    </script>
+</body>
+</html>
+
+```
+		
+### 流程控制语句：
 
 - if...else...
 
 - switch
+    - 在java中，switch语句可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)
 
-	* 在java中，switch语句可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)
 
+	switch(变量) {
+		case 值1:
+		    执行体;
+		    break;
+		case 值2:
+		    执行体;
+		    braek;
+		....
+	}
 
-	switch(变量):
-		case 值:
-							
-- 在JS中,switch语句可以接受任意的原始数据类型
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch语句</title>
+    <script>
+
+        var a;
+        switch (a) {
+            case 1:
+                alert("a 为 number 类型");
+                break;
+            case "abc":
+                alert("a 为 string 类型");
+                break;
+            case true:
+                alert("a 为 number 类型");
+                break;
+            case null:
+                alert("a 为 null 类型");
+                break;
+            case undefined:
+                alert("a 为 undefined 类型");
+                break;
+        }
+
+    </script>
+</head>
+<body>
+    <h2>switch语句</h2>
+    var a 为 undefined 类型
+</body>
+</html>
+```
+> 在JS中,switch语句可以接受任意的原始数据类型
 
 - while
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while语句</title>
+    <script>
+
+       //1 ~ 100 求和  5050
+
+        var sum = 0;
+        var num = 1;
+
+        while(num <= 100){
+            sum += num;
+            num ++;
+        }
+        alert(sum);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+```
 
 - do...while
 
 - for
 
-#### JS特殊语法：
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for语句</title>
+    <script>
+        var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            sum += i;
+        }
+        alert(sum);
+    </script>
+</head>
+<body>
+    <h2>弹出窗体的输出值：</h2>
+    5050
+</body>
+</html>
+```
+
+### JS特殊语法：
 
 - 语句以;结尾，如果一行只有一条语句则 ;可以省略 (不建议)
 
@@ -342,8 +539,9 @@ abc < acd ：true <br>
 	* 用： 定义的变量是局部变量
 		* 不用：定义的变量是全局变量(不建议)
 
-### 基本对象：
-#### Function：函数(方法)对象
+## 基本对象：
+
+### Function：函数(方法)对象
 
 - 创建：
 
@@ -365,13 +563,13 @@ abc < acd ：true <br>
 length:代表形参的个数
 
 - 特点：
-1. 方法定义是，形参的类型不用写,返回值类型也不写。
-2. 方法是一个对象，如果定义名称相同的方法，会覆盖
-3. 在JS中，方法的调用只与方法的名称有关，和参数列表无关
-4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
-5. 调用：方法名称(实际参数列表);
+    - 1. 方法定义是形参的类型不用写,返回值类型也不写。
+    - 2. 方法是一个对象，如果定义名称相同的方法，会覆盖
+    - 3. 在JS中，方法的调用只与方法的名称有关，和参数列表无关
+    - 4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
+    - 5. 调用：方法名称(实际参数列表);
 			
-#### Array:数组对象
+### Array:数组对象
 - 创建：
 
 	
@@ -394,9 +592,67 @@ length:代表形参的个数
 	- JS中，数组元素的类型可变的
 	- JS中，数组长度可变的
 	
-#### Boolean
+```html
 
-#### Date：日期对象
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array数组对象</title>
+    <script>
+        // 1.创建对象的方式一
+        var arr1 = new Array(1, 2, 3);
+        // 2.创建数组的方式二
+        var arr2 = new Array(5);
+        // 3.创建数组的方式三
+        var arr3 = [1, 2, 3, 4];
+
+        var arr4 = new Array();
+
+        document.write(arr1 + "<br>");
+        document.write(arr2 + "<br>");
+        document.write(arr3 + "<br>");
+        document.write(arr4 + "<br>");
+
+        document.write("<hr>");
+
+        var arr = [1, "abc", true];
+        document.write("arr = " + arr  + "<br>");
+        document.write("arr[0] = " + arr[0] + "<br>");
+        document.write("arr[1] = " + arr[1] + "<br>");
+        document.write("arr[2] = " + arr[2] + "<br>");
+
+        document.write("arr[10] = " + arr[10] + "<br>");
+
+        arr[10] = "hehe";
+        document.write("arr[10] = " + arr[10] + "<br>");
+        document.write("arr[9] = " + arr[9] + "<br>");
+
+
+
+    </script>
+</head>
+<body>
+    <h2>Array数组对象</h2>
+    1,2,3
+    ,,,,
+    1,2,3,4
+
+    arr = 1,abc,true
+    arr[0] = 1
+    arr[1] = abc
+    arr[2] = true
+    arr[10] = undefined
+    arr[10] = hehe
+    arr[9] = undefined
+</body>
+</html>
+
+```
+
+### Boolean
+
+### Date：日期对象
 - 创建：
 
 
@@ -405,8 +661,32 @@ length:代表形参的个数
 - 方法：
 	- toLocaleString()：返回当前date对象对应的时间本地字符串格式
 	- getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差
-	
-#### Math：数学对象
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <script>
+        var date = new Date();
+        document.write(date + "<br>");
+        document.write(date.toLocaleDateString() + "<br>");
+        document.write(date.getTime() + "<br>");
+    </script>
+</head>
+<body>
+    <h2>上述代码的输出结果</h2>
+    Fri Aug 30 2019 15:31:12 GMT+0800 (中国标准时间)
+    2019/8/30
+    1567150272140
+</body>
+</html>
+
+```
+
+### Math：数学对象
 
 - 创建：
 	- 特点：Math对象不用创建，直接使用 
@@ -422,11 +702,39 @@ length:代表形参的个数
 	
 - 属性：PI
 
-#### Number
+```html
 
-#### String
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math对象</title>
+    <script>
+        document.write("PI = " + Math.PI + "<br>");
+        document.write("random = " + Math.random() + "<br>");
+        document.write("round(3.14) = " + Math.round(3.14) + "<br>");
+        document.write("ceil(3.14) = " + Math.ceil(3.14) + "<br>");
+        document.write("floor(3.14) = " + Math.floor(3.14) + "<br>");
 
-#### RegExp：正则表达式对象
+    </script>
+</head>
+<body>
+    <h2>上述输出的结果为：</h2>
+    PI = 3.141592653589793
+    random = 0.0699148373820131
+    round(3.14) = 3
+    ceil(3.14) = 4
+    floor(3.14) = 3
+</body>
+</html>
+
+```
+
+### Number
+
+### String
+
+### RegExp：正则表达式对象
 
 正则表达式：定义字符串的组成规则
 
@@ -438,7 +746,7 @@ length:代表形参的个数
 	- \d:单个数字字符 [0-9]
 	- \w:单个单词字符[a-zA-Z0-9_]
 							
-#### 量词符号：
+### 量词符号：
 
 - ?：表示出现0次或1次
 
@@ -483,6 +791,7 @@ length:代表形参的个数
 - eval():讲 JavaScript 字符串，并把它作为脚本代码来执行
 
 # DOM
+
 功能：控制html文档的内容
 
 获取页面标签(元素)对象：**Element**
@@ -490,6 +799,30 @@ length:代表形参的个数
 	document.getElementById("id值"):通过元素的id获取元素对象
 	
 操作Element对象：
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 获取元素对象</title>
+</head>
+<body>
+
+    <img id = "light" src = "./off.gif" />
+    <h1 id = "title">爱酱油不爱醋</h1>
+
+    <script>
+        // 通过 id 获取元素对象
+        var light = document.getElementById("light");
+        alert("我要换图片啦！");
+        light.src = "./on.gif";
+    </script>
+</body>
+</html>
+
+```
 
 - 修改属性值：
 	- 明确获取的对象是哪一个？
@@ -499,72 +832,76 @@ length:代表形参的个数
 	- 使用innerHTML属性修改标签体内容
 
 ## 事件
-* 功能： 某些组件被执行了某些操作后，触发某些代码的执行。
+* 功能： 某些组件被执行了某些操作后，触发某些代码的执行
 	* 造句：  xxx被xxx,我就xxx
 		* 我方水晶被摧毁后，我就责备对友。
 		* 敌方水晶被摧毁后，我就夸奖自己。
 
 * 如何绑定事件
 
-直接在html标签上，指定事件的属性(操作)，属性值就是js代码
+直接在 html 标签上，指定事件的属性(操作)，属性值就是js代码
 
 	事件：onclick--- 单击事件
 	
 
-通过js获取元素对象，指定事件属性，设置一个函数
+通过 js 获取元素对象，指定事件属性，设置一个函数
 
 
 # BOM:
+
 ## 概念
-Browser Object Model 浏览器对象模型
+**Browser Object Model** 即浏览器对象模型，将浏览器的各个组成部分封装成对象。
 
-* 将浏览器的各个组成部分封装成对象。
+- `Window`：窗口对象
+- `Navigator`：浏览器对象
+- `Screen`：显示器屏幕对象
+- `History`：历史记录对象
+- `Location`：地址栏对象
 
-## 组成：
-* Window：窗口对象
-* Navigator：浏览器对象
-* Screen：显示器屏幕对象
-* History：历史记录对象
-* Location：地址栏对象
-
-## Window
+## Window 
 
 窗口对象
 
 ### 创建 
-- 方法
-	- 与弹出框有关的方法：
-		- alert()	显示带有一段消息和一个确认按钮的警告框。
-		- confirm()	显示带有一段消息以及确认按钮和取消按钮的对话框。
-			* 如果用户点击确定按钮，则方法返回true
-			* 如果用户点击取消按钮，则方法返回false
-	  - prompt()	显示可提示用户输入的对话框。
-			* 返回值：获取用户输入的值
+
+#### 方法
+
+与**弹出框**有关的方法：
+
+- `alert()`	显示带有一段消息和一个确认按钮的警告框。
+- `confirm()` 显示带有一段消息以及确认按钮和取消按钮的对话框。
+    - 如果用户点击确定按钮，则方法返回true
+	- 如果用户点击取消按钮，则方法返回false
+- `prompt()` 显示可提示用户输入的对话框。
+	- 返回值：获取用户输入的值
 			
-	- 与打开关闭有关的方法：
-		- close()	关闭浏览器窗口。
-			- 谁调用我，我关谁
-		- open()	打开一个新的浏览器窗口
-			- 返回新的Window对象
+与打开关闭有关的方法：
+
+- `close()`	关闭浏览器窗口；谁调用我，我关谁
+- `open()` 打开一个新的浏览器窗口；返回新的Window对象
 			
-- 与定时器有关的方式
-	- setTimeout()	在指定的毫秒数后调用函数或计算表达式
-		* 参数：1) js代码或者方法对象 2) 毫秒值 3) 返回值：唯一标识，用于取消定时器
-	- clearTimeout()	取消由 setTimeout() 方法设置的 timeout。
-	- setInterval()	按照指定的周期（以毫秒计）来调用函数或计算表达式。
-	- clearInterval()	取消由 setInterval() 设置的 timeout。
+与**定时器**有关的方式：
+
+- `setTimeout()` 在指定的毫秒数后调用函数或计算表达式
+	- 参数：1) js代码或者方法对象 2) 毫秒值 3) 返回值：唯一标识，用于取消定时器
+- `clearTimeout()` 取消由 setTimeout() 方法设置的 timeout。
+- `setInterval()` 按照指定的周期（以毫秒计）来调用函数或计算表达式。
+- `clearInterval()`	取消由 setInterval() 设置的 timeout。
 	
 ### 属性：
+
 #### 获取其他BOM对象
 
-- history
-- location
-- Navigator
-- Screen:
+- `history`
+- `location`
+- `Navigator`
+- `Screen`
 - 获取DOM对象
 
-		document
-	            
+```
+document
+```
+
 ## 特点
 	        * Window对象不需要创建可以直接使用 window使用。 window.方法名();
 	        * window引用可以省略。  方法名();

@@ -21,7 +21,7 @@
         <!-- 配置事务管理器 -->
         <environment id = "development">
             <!-- 此处采用的是 MyBatis 的 JDBC 管理器方式 -->
-            <transactionManager type="JDBC" />
+            <transactionManager type = "JDBC" />
             <!-- 配置数据库 -->
             <!-- 属性type="POOLED"代表采用 MyBatis 内部连接池方式 -->
             <dataSource type = "POOLED">

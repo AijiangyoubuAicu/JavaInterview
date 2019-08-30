@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS运算符</title>
+    <script>
+
+        var flag = true;
+        document.write("flag = " + flag + "<br>");
+        document.write("flag = " + !flag + "<br>");
+
+        // 除了 0(编译为false) 和 NaN 值，其他均为 true
+        var num = 3;
+        var num3 = 0;
+        var num2 = NaN;
+        document.write("!!num = " + !!num + "<br>");
+        document.write("!!num2 = " + !!num2 + "<br>");
+        document.write("!!num3 = " + !!num3 + "<br>");
+
+        // 任何与 null 和 undefined 的值的“与”操作都是 false
+        var obj = null;
+        var obj2;
+        document.write("!!obj = " + !!obj + "<br>");
+        document.write("!!obj2 = " + !!obj2 + "<br>");
+
+        // 所有对象都是 true
+        var date = new Date();
+        document.write( "!!date = "+ !!date + "<br>");
+
+        // 防止字符串的空指针异常
+        obj = "123";
+        if (obj != null && obj.length > 0) {
+            alert(123);
+        }
+        // 推荐简化写法：
+        if (obj) {
+            alert(123);
+        }
+
+    </script>
+</head>
+<body>
+    <h2>输出结果为：</h2>
+    flag = true<br>
+    flag = false<br>
+    !!num = true<br>
+    !!num2 = false<br>
+    !!num3 = false<br>
+    !!obj = false<br>
+    !!obj2 = false<br>
+    !!date = true<br>
+</body>
+</html>

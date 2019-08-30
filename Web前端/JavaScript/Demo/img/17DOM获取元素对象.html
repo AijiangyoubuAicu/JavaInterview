@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 获取元素对象</title>
+</head>
+<body>
+
+    <img id = "light" src = "./off.gif" />
+    <h1 id = "title">爱酱油不爱醋</h1>
+
+    <script>
+        // 通过 id 获取元素对象
+        var light = document.getElementById("light");
+        alert("我要换图片啦！");
+        light.src = "./on.gif";
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特殊语法</title>
+    <script>
+        // 如果一行只有一条语句则 ;可以省略
+        var a = 3
+    </script>
+</head>
+<body>
+    <script>
+        // 变量的定义使用var关键字，用是局部变量，不用是全局变量
+        var b;
+        function fun() {
+            b = 4;
+        }
+        fun();
+        alert(b);
+    </script>
+</body>
+</html>
