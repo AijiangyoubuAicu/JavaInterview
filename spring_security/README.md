@@ -16,4 +16,21 @@ spring security的主要核心功能为**认证**和**授权**，所有的架构
 - [Filter 拦截器](../JavaEE/src/main/directory/Filter与Listener/ReadMe.md)
 
 ## 框架原理
-在该框架之前，一般都使用 JavaEE 的两个组件`Filter`拦截器和`Linstencr`过滤器
+在该框架之前，一般都使用 JavaEE 的两个组件`Filter`拦截器和`Linstencr`过滤器，最好的办法莫过于`Filter`并使用 Spring 的 AOP 对
+方法调用进行保护；
+
+Spring Security 在我们进行用户认证以及授予权限的时候，通过各种各样的拦截器来控制权限的访问，从而实现安全
+
+- `WebAsyncManagerIntegrationFilter` 
+- `SecurityContextPersistenceFilter` 
+- `HeaderWriterFilter` 
+- `CorsFilter` 
+- `LogoutFilter`
+- `RequestCacheAwareFilter`
+- `SecurityContextHolderAwareRequestFilter`
+- `AnonymousAuthenticationFilter`
+- `SessionManagementFilter`
+- `ExceptionTranslationFilter`
+- `FilterSecurityInterceptor`
+- `UsernamePasswordAuthenticationFilter`
+- `BasicAuthenticationFilter`
