@@ -13,7 +13,7 @@
 spring security的主要核心功能为**认证**和**授权**，所有的架构也是基于这两个核心功能去实现的；
 
 前置知识：
-- [Filter 拦截器](../JavaEE/src/main/Filter与Listener/ReadMe.md)
+- [Filter 拦截器](../JavaEE/src/main/directory/Filter与Listener/ReadMe.md)
 
 ## 框架原理
 在该框架之前，一般都使用 JavaEE 的两个组件`Filter`拦截器和`Linstencr`过滤器
