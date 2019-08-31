@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web前端/Web前端.iml" filepath="$PROJECT_DIR$/Web前端/Web前端.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/spring_security/spring_security.iml" />
       <module fileurl="file://$PROJECT_DIR$/数据库/数据库.iml" filepath="$PROJECT_DIR$/数据库/数据库.iml" />
       <module fileurl="file://$PROJECT_DIR$/算法与数据结构/算法与数据结构.iml" filepath="$PROJECT_DIR$/算法与数据结构/算法与数据结构.iml" />
       <module fileurl="file://$PROJECT_DIR$/计算机专业课程/计算机专业课程.iml" filepath="$PROJECT_DIR$/计算机专业课程/计算机专业课程.iml" />
