@@ -1,4 +1,4 @@
-package cn.aijiang.spring.spring_security;
+package cn.aijiang.spring_security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

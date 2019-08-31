@@ -21,11 +21,13 @@
       <module name="Spring" target="6" />
       <module name="spring_security" target="1.8" />
       <module name="SpringMVC" target="1.5" />
+      <module name="springSecurity" target="1.8" />
       <module name="计算机专业课程" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springSecurity" options="-parameters" />
       <module name="spring_security" options="-parameters" />
     </option>
   </component>

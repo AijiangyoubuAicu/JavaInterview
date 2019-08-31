@@ -2,7 +2,9 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/JavaEE" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_security" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/springSecurity" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

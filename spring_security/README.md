@@ -34,3 +34,56 @@ Spring Security 在我们进行用户认证以及授予权限的时候，通过�
 - `FilterSecurityInterceptor`
 - `UsernamePasswordAuthenticationFilter`
 - `BasicAuthenticationFilter`
+
+## 核心 jar 包
+
+运行 Demo 所需
+
+```xml
+<!-- spring 权限组件jar包 -->
+ <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<!-- springMVC web组件jar包 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+```
+
+编写一个 Controller 的 Demo
+
+```java
+
+package cn.aijiang.spring.spring_security.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class AppController {
+
+    @RequestMapping("/hello")
+    @ResponseBody
+    String home() {
+        return "Hello，Spring Security!";
+    }
+}
+
+```
+
+启动 springboot，并输出`http://localhost:8080/hello`，会看到：
+
+![](img/登录.png)
+
+看输出控制台会有密钥：
+
+![](img/密钥.png)
+
+账号是`user`
+
+> spring boot 集成 security 后每次启动 springboot 都会默认提供了表单登录的功能
