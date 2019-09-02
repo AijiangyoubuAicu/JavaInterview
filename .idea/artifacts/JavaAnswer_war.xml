@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaAnswer:war">
+    <output-path>$PROJECT_DIR$/JavaAnswer/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JavaAnswer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JavaAnswer.war">
+      <element id="artifact" artifact-name="JavaAnswer:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -55,7 +55,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/spring_security/target/spring_security-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="springSecurity/web/Web" />
+      <element id="javaee-facet-resources" facet="spring_security/web/Web" />
     </root>
   </artifact>
 </component>

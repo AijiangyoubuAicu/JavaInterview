@@ -207,6 +207,6 @@ public class Demo02_BasicDataType {
 
 [面试题](Interview.md)
 
-[返回顶部](#变量与数据类型)
+[返回顶部](#数据类型)
 
-[返回上一页](../../KnowledgePoint.md)
+[下一个章节](../包装类/ReadMe.md)
