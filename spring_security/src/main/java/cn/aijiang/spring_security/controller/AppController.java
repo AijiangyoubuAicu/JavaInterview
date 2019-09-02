@@ -1,15 +1,15 @@
-package cn.aijiang.spring_security.controller;
+package cn.aijiang.spring.spring_security.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * 创建一个不受保护的应用的控制器
+ */
 @Controller
 public class AppController {
 
-    @RequestMapping("/hello")
-    @ResponseBody
     String home() {
-        return "Hello，Spring Security!";
+        return "Hello,Spring Security!";
     }
+
 }
