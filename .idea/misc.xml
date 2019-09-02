@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/JavaAnswer" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE" />
     <file type="web" url="file://$PROJECT_DIR$/spring_security" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
@@ -16,7 +15,6 @@
         <option value="$PROJECT_DIR$/计算机专业课程/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/spring_security/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaAnswer/pom.xml" />
       </list>
     </option>
   </component>
