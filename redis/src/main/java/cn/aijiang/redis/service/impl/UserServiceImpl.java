@@ -12,9 +12,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
-
-    Logger.getLogger
 
     /**
      * 模拟数据库
@@ -39,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User saveOrUpdate(User user) {
         DATABASE.put(user.getId(), user);
-
+        log.info("保存用户【user】= {}", user);
         return user;
     }
 
@@ -52,6 +51,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User get(Long id) {
         // 假设从数据库读取
+        log.info("查询用户【id】= {}", id);
         return DATABASE.get(id);
     }
 
@@ -63,6 +63,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long id) {
         DATABASE.remove(id);
-
+        log.info("删除用户【id】= {}", id);
     }
 }
