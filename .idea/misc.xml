@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/JavaAnswer" />
     <file type="web" url="file://$PROJECT_DIR$/JavaEE" />
+    <file type="web" url="file://$PROJECT_DIR$/redis" />
     <file type="web" url="file://$PROJECT_DIR$/spring_security" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
     <file type="web" url="file://$PROJECT_DIR$/springSecurity" />
@@ -17,6 +18,7 @@
         <option value="$PROJECT_DIR$/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/spring_security/pom.xml" />
         <option value="$PROJECT_DIR$/JavaAnswer/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
       </list>
     </option>
   </component>
