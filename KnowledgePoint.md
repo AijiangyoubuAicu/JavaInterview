@@ -28,7 +28,7 @@
   - [数据类型](JavaSE/1变量与数据类型/数据类型/ReadMe.md)
   - [包装类](JavaSE/1变量与数据类型/包装类/ReadMe.md)
 
-- [Java 运算与控制流程](JavaSE/2Java运算与控制流程)
+- Java 运算与控制流程
 
   - [运算符](JavaSE/2Java运算与控制流程/1.运算符/ReadMe.md)
   - [控制流程](JavaSE/2Java运算与控制流程/2.控制流程/ReadMe.md)
@@ -36,7 +36,7 @@
   - [Math 数学运算类](JavaSE/2Java运算与控制流程/4.Math数学运算类/README.md)
   - [BigDecimal 精度运算类](JavaSE/2Java运算与控制流程/5.BigDecimal精度运算类/README.md)
 
-- [面向对象](JavaSE/3面向对象)
+- 面向对象
   - [面向对象与类](JavaSE/3面向对象/面向对象与类/ReadMe.md)
   - [抽象继承体系](JavaSE/3面向对象/抽象继承体系/ReadMe.md)
   - [static 静态关键字](JavaSE/3面向对象/static静态关键字/ReadMe.md)
@@ -44,7 +44,7 @@
   - [权限管理关键字](JavaSE/3面向对象/权限管理关键字/ReadMe.md)
   - [内部类](JavaSE/3面向对象/内部类/ReadMe.md)
 
-- [基本API](JavaSE/4基本API)
+- 基本API
   - [Object 根类](JavaSE/4基本API/Object根类/README.md)
   - [System 系统类](JavaSE/4基本API/System系统类/README.md)
   - Random 随机数类
