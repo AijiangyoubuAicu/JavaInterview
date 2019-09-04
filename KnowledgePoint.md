@@ -9,8 +9,8 @@
 - 操作系统
 	- [Linux](计算机专业课程/src/dir/OperatingSystem/linux/Linux概述/ReadMe.md)
 - 计算机网络原理
-	- HTTP
-	- TCP/IP
+	- [HTTP] **待建设**
+	- [TCP/IP] **待建设**
 - 数据结构与算法
 
 ## 其他技术
@@ -19,7 +19,7 @@
 
 ## JavaSE
 
-- [Java 基本常识与知识海概述](JavaSE/0Java基本常识/ReadMe.md)
+- [Java 基本常识与知识海概述](JavaSE/0Java基本常识/ReadMe.md) **推迟完成**
 
 - 变量与数据类型
 
@@ -64,14 +64,14 @@
   	- [Set](JavaSE/5容器/2.单列集合Collection/Set/ReadMe.md)
   - [Map 映射表](JavaSE/5容器/3.映射表Map/ReadMe.md)
   - [Concurrent 并发集合类](JavaSE/5容器/Concurrent%20并发集合类/README.md)
-  - [Stream 流](JavaSE/5容器/Stream流/ReadMe.md)
+  - [Stream 集合流](JavaSE/5容器/Stream流/ReadMe.md)
 
 - [IO数据的处理](JavaSE/5容器/ReadMe.md)
 
   - [File 文件类](JavaSE/6IO数据的处理/File文件类/ReadMe.md)
   - RandomAccessFile类基于指针的随机访问
   - [IO 流](JavaSE/6IO数据的处理/IO流/ReadMe.md)
-  - [NIO](JavaSE/6IO数据的处理/NIO/README.md)
+  - [NIO 流](JavaSE/6IO数据的处理/NIO/README.md)
     
 - 多线程与并发
   - [多线程概念](JavaSE/7多线程与并发/多线程概念/ReadMe.md)
@@ -94,9 +94,9 @@
 
 - [JVM概述](JVM/ReadMe.md) **继续建设**
 
-## 算法与数据结构
+## 算法与数据结构 
 
-- [算法概述](算法与数据结构/ReadMe.md)
+- [Java常见算法](算法与数据结构/ReadMe.md) **待建设**
 
 ## 设计模式
 
@@ -155,13 +155,12 @@
 
 ## Spring 家族
 
-- [Spring框架](Spring/ReadMe.md)
-    - [IOC 控制反转]
-    - [AOP 面向切面编程]
+- Spring框架
+    - [IOC 控制反转](Spring/ReadMe.md)
+    - [AOP 面向切面编程](Spring/AOP_README.md)
 	- [Spring框架原理分析](Spring/springIOC原理解析.md)
-- [SpringMVC 框架]
-- [Mybatis 框架]
-- [Spring Boot 框架]
+	
+- [Spring Boot 框架] **正在建设**
 
 ## ORM 框架
 - Hibernate
@@ -173,5 +172,7 @@
 - [Spring MVC] **正在建设**
 
 ## 分布式与微服务架构 **待建设**
+
+- [Spring Cloud] **正在建设**
 
 ## 中间件技术 **待建设**
