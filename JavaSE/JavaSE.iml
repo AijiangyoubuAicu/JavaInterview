@@ -37,6 +37,7 @@
       <sourceFolder url="file://$MODULE_DIR$/5容器/iterator/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/8Java高级语法特性/文档注释/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/5容器/Stream流/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/6IO数据的处理/NIO/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
