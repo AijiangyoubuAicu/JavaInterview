@@ -15,8 +15,15 @@ JavaInterview是用来学习Java基础知识点并辅于面试题进一步加深
 - 数据库参考代码(正在进行)
 - SpringMVC知识点(正在进行)
 - SpringMVC工作流程(正在进行)
+- 建造者设计模式
+- 结构型模式
+	- 静态与动态代理设计模式
+	- 适配器设计模式
+- 行为型模式
+	- 策略设计模式
+- MyBatis知识点(正在进行)
+- MyBatis工作原理(正在进行)
 - SpringBoot知识点(正在进行)
-- springboot集成中间件Demo(正在进行)
 - SpringBoot工作原理(正在进行)
 - 计算机网络原理
 	- HTTP(正在进行)

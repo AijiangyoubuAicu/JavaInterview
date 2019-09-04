@@ -136,6 +136,7 @@
 ## 工具
 
 - [Git 分布式版本控制工具]
+- [Redis 非关系型内存键值数据库]
 - [Maven 项目管理工具]
 - [Docker 容器]
 
@@ -147,7 +148,7 @@
 - [Mybatis 框架](Mybatis/ReadMe.md)
 - [Spring Boot 框架]
 
-## 中间间
+## 中间件
 
 - [Spring Security 认证与权限管理]
 

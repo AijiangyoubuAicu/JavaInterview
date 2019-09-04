@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web前端/Web前端.iml" filepath="$PROJECT_DIR$/Web前端/Web前端.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/spring_security/spring_security.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot/springboot.iml" filepath="$PROJECT_DIR$/springboot/springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/数据库/数据库.iml" filepath="$PROJECT_DIR$/数据库/数据库.iml" />
