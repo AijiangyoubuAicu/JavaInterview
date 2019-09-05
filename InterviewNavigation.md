@@ -6,58 +6,48 @@
 
 ## JavaSE
 
-- [Java基本常识](JavaSE/0Java基本常识/Interview.md)
+### [Java基本常识](JavaSE/0Java基本常识/Interview.md)
+ - 简单的说一下什么是跨平台
+ - Oracle JDK 和 OpenJDK 的对比
+ - 说一下Java和C++的区别
+ 
+### 变量与数据类型
 
-  - 简单的说一下什么是跨平台
-  - Oracle JDK 和 OpenJDK 的对比
-  - 说一下Java和C++的区别
+#### [变量](JavaSE/1变量与数据类型/变量/Interview.md) 
+ - 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
+ - 引用类型是占用几个字节的
+ 
+#### [常量](JavaSE/1变量与数据类型/常量/Interview.md)
+ - char型变量能不能存储一个中文汉字？为什么？
+		
+#### [数据类型](JavaSE/1变量与数据类型/数据类型/Interview.md)
+ - 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
+ - 不同的数据类型的转换有哪些规则
+ - 强制类型转换的注意事项
+		
+#### [包装类](JavaSE/1变量与数据类型/包装类/Interview.md)
+ - 为什么需要包装类
+ - 基本数据类型与包装类的区别
 
-- 变量与数据类型
-
-  - [变量](JavaSE/1变量与数据类型/变量/Interview.md) 
+### Java运算与控制流程
+#### [运算符](JavaSE/2Java运算与控制流程/1.运算符/Interview.md)
+ - "4&5" "4^5" "4|5" "4&10 >> 1"各等于多少
+ - 说说 && 于 & 的区别
+ - short s1 = 1，s1 = 1 + 1有什么错吗？或者short s1 = 1，s1 += 1有什么错吗?
+ - 用最有效率的方法算出 2 * 8 等于几
+		
+#### [控制流程](JavaSE/2Java运算与控制流程/2.控制流程/Interview.md)
+ - break、continue 以及 return 有什么区别？
+ - java中switch选择结构中可以使用数据类型的数据(在JDK1.8)
+		
+#### [方法](JavaSE/2Java运算与控制流程/3.方法/Interview.md)
+ - 值传递和引用传递有哪些区别
+ - 局部变量使用前需要显式地赋值，否则编译通过不了，为什么这么设计
+		
+#### [Math数学运算类](JavaSE/2Java运算与控制流程/4.Math数学运算类/Interview.md)
+ - Math.round(-2.5)等于多少
   
-    - 什么是实例变量？什么是局部变量？什么是类变量？什么是final变量？
-	- 引用类型是占用几个字节的
-		
-  - [常量](JavaSE/1变量与数据类型/常量/Interview.md)
-  
-    - char型变量能不能存储一个中文汉字？为什么？
-		
-  - [数据类型](JavaSE/1变量与数据类型/数据类型/Interview.md)
-	
-    - 列出Java中所有基本数据类型，并说明这些数据类型占用的字节数
-    - 不同的数据类型的转换有哪些规则
-    - 强制类型转换的注意事项
-		
-  - [包装类](JavaSE/1变量与数据类型/包装类/Interview.md)
-  
-    - 为什么需要包装类
-    - 基本数据类型与包装类的区别
-
-- Java运算与控制流程
-	
-  - [运算符](JavaSE/2Java运算与控制流程/1.运算符/Interview.md)
-	
-    - "4&5" "4^5" "4|5" "4&10 >> 1"各等于多少
-    - 说说 && 于 & 的区别
-    - short s1 = 1，s1 = 1 + 1有什么错吗？或者short s1 = 1，s1 += 1有什么错吗?
-    - 用最有效率的方法算出 2 * 8 等于几
-		
-  - [控制流程](JavaSE/2Java运算与控制流程/2.控制流程/Interview.md)
-  
-    - break、continue 以及 return 有什么区别？
-    - java中switch选择结构中可以使用数据类型的数据(在JDK1.8)
-		
-  - [方法](JavaSE/2Java运算与控制流程/3.方法/Interview.md)
-    
-    - 值传递和引用传递有哪些区别
-    - 局部变量使用前需要显式地赋值，否则编译通过不了，为什么这么设计
-		
-  - [Math数学运算类](JavaSE/2Java运算与控制流程/4.Math数学运算类/Interview.md)
-    
-    - Math.round(-2.5)等于多少
-  
-  - [BigDecimal精度运算类](JavaSE/2Java运算与控制流程/5.BigDecimal精度运算类/Interview.md)
+#### [BigDecimal精度运算类](JavaSE/2Java运算与控制流程/5.BigDecimal精度运算类/Interview.md)
 	
 - [面向对象面试题合集](JavaSE/3面向对象/Interview.md)
 
@@ -193,13 +183,9 @@
 
 ## Web前端
 
-<br>
-
 ## 数据库
 
 - [数据库](数据库/Interview.md)
-
-<br>
 
 ## JavaEE
 
