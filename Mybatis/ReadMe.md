@@ -288,20 +288,20 @@ System.out.println("用户的总数：" + rows);    // 用户的总数：6
 > SqlSession 是单线程对象，因为它是非线程安全的，是持久化操作的共享对象，类似 JDBC 中的 Connection，底层就封装了 JDBC 连接
 
 ### MyBatis 详细流程
-- 1.加载 MyBatis 全局配置文件(数据源、mapper映射文件等)，解析配置文件，MyBatis 基于 XML 配置文件生成
+1.加载 MyBatis 全局配置文件(数据源、mapper映射文件等)，解析配置文件，MyBatis 基于 XML 配置文件生成
 `Configuration`，和一个个 MappedStatement (包括了参数映射配置、动态SQL语句、结果映射配置)，其对应着
 <select> | <updata> | <delete> | <insert> 标签项
 <br>
 	
-- 2.SqlSessionFactoryBuilder 通过 Configuration 对象生成 SqlSessionFactory，用来开启 SqlSession
+2.SqlSessionFactoryBuilder 通过 Configuration 对象生成 SqlSessionFactory，用来开启 SqlSession
 <br>
 
-- 3.SqlSession 对象完成与数据库的交互
-    - (1) 用户程序调用 mybatis 接口层 API (即 Mapper 接口中方法)
-    - (2) SqlSession 调用 API 的 Statement ID找到对应的 MappedStatement 对象
-    - (3) 通过 Executor(负责动态SQL的生成和查询缓存的维护) 将 MappedStatement 对象进行解析、SQL参数转化、动态SQL拼接、生成`JDBC Statement`对象
-    - (4) JDBC 执行 SQL
-    - (5) 借助 MappedStatement 中的结果映射关系，将返回的结果转换为 HashMap、JavaBean 等存储结构并返回
+3.SqlSession 对象完成与数据库的交互
+- (1) 用户程序调用 mybatis 接口层 API (即 Mapper 接口中方法)
+- (2) SqlSession 调用 API 的 Statement ID找到对应的 MappedStatement 对象
+- (3) 通过 Executor(负责动态SQL的生成和查询缓存的维护) 将 MappedStatement 对象进行解析、SQL参数转化、动态SQL拼接、生成`JDBC Statement`对象
+- (4) JDBC 执行 SQL
+- (5) 借助 MappedStatement 中的结果映射关系，将返回的结果转换为 HashMap、JavaBean 等存储结构并返回
 
 <br>
 MyBatis层次结构：
