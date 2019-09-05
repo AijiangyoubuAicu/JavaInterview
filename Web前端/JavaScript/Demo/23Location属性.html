@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location 属性</title>
+</head>
+<body>
+    <input type="button" id="ptn" value="刷新">
+    <input type="button" id="btn" value="爱酱油的库">
+    <script>
+        /**
+         * reload 方法，定义一个按钮
+         * 点击按钮，刷新当前页面
+         */
+
+        // 1.获取按钮
+        var ptn = document.getElementById("ptn");
+        // 2.绑定单击事件
+        ptn.onclick = function () {
+            // 3.刷新页面
+            location.reload();
+        }
+
+        // 获取 href
+        var href = location.href;
+        // 点击按钮，去访问这个页面
+        // 1.获取按钮
+        var goItcast = document.getElementById("btn");
+        // 2.绑定单击事件
+        goItcast.onclick = function () {
+            // 3.去访问页面
+            location.href = "https://github.com/AijiangyoubuAicu/JavaInterview";
+        }
+    </script>
+</body>
+</html>

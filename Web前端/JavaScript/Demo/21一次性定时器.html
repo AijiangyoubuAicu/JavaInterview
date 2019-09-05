@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次性定时器</title>
+</head>
+<body>
+    <script>
+        // setTimeout()：定时器方法，在指定毫秒(参数2)后调用指定方法(参数1)
+        setTimeout("fun()", 2000);
+        // 传给一个变量
+        var id = setTimeout(fun, 2000);
+
+        // 调用的方法细节
+        function fun() {
+            // 本次方法目的是：2000毫秒后弹出一个警告框
+            alert('boom~~~~');
+        }
+
+        // setInterval()：循环定时器，即每指定毫秒(参数2)调用一次指定方法(参数1)
+        var id2 = setInterval(fun, 2000);
+        // 取消设定的定时器，如果去掉该方法，上述方法则一直循环
+        clearInterval(id2);
+    </script>
+</body>
+</html>

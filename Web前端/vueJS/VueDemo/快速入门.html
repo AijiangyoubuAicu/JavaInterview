@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>快速入门</title>
+        <!-- 导入 vue.js 核心包 -->
+        <script src="../vuejs/vuejs-2.5.16.js"></script>
+    </head>
+<body>
+    <div id="app">
+        {{message}}
+        <!-- 一元运算表达式 -->
+        {{ number + 1 }}
+        <!-- 三元表达式 -->
+        {{ ok ? "YES" : "NO" }}
+        <!-- 不生效：这是语句，不是表达式 -->
+        {{ var a = 1 }}
+        <!-- 控制流程不生效，请使用三元运算符 -->
+        {{ if (ok) { return message } }}
+
+    </div>
+    <script>
+        new Vue({
+            el:'#app',  // 表示当前 Vue 对象接管对应 id 的 div 区域，注意此次有逗号
+            data: {
+                message: 'hello world' // 注意不要以分号结尾
+            }
+        }); // 此处才用分号结尾
+    </script>
+</body>
+</html>

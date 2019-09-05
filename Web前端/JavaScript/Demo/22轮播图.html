@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<body>
+    <img id="img" src="img/banner_1.jpg" width="100%">
+
+    <script>
+        /**
+         * 1.在页面上使用 img 标签展示图片
+         * 2.定义一个方法，修改图片对象的 src 属性
+         * 3.定义一个定时器，每隔 3 秒钟调用一次方法
+         */
+
+        // 修改图片 src 属性
+        var number = 1;
+        function fun() {
+            number ++;
+            // 判断 number 是否大于3
+            if (number > 3) {
+                number = 1;
+            }
+            // 获取 img 对象
+            var img = document.getElementById("img");
+            img.src = "img/banner_" + number + ".jpg";
+        }
+
+        // 定义定时器，每隔 2000 毫秒调用一次方法
+        setInterval(fun, 2000);
+
+    </script>
+</body>
+</html>

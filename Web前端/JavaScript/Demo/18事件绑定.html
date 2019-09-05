@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+    <img id="light" src="img/off.gif" onclick="fun();" />
+    <img id="light2" src="img/off.gif" />
+
+    <script>
+        function fun() {
+            alert('我被点了');
+            alert('我又被点了');
+        }
+
+        function fun2() {
+            alert('咋老点我？');
+        }
+
+        // 1.获取 light2 对象
+        var light2 = document.getElementById("light2");
+
+        // 2.绑定点击事件
+        light2.onclick = fun2;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 打开与关闭的方法</title>
+</head>
+<body>
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭窗口">
+
+    <script>
+        // 打开新窗口
+        var openBtn = document.getElementById("openBtn");
+        var newWindow;
+        openBtn.onclick = function () {
+            // open() 方法：点击后会打开对应的 URL 的网址，以一个新网址窗口的形式
+            newWindow = open("https://github.com/AijiangyoubuAicu/JavaInterview");
+        }
+
+        // 关闭新窗口
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.onclick = function () {
+            // close() 方法：关闭绑定的网址窗口
+            newWindow.close();
+        }
+
+    </script>
+</body>
+</html>

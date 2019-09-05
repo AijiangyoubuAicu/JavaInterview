@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+</head>
+<body>
+    <img id="light" src="img/off.gif">
+
+    <script>
+        // 1.获取图片对象
+        var light = document.getElementById("light");
+        // 创建一个变量代表灯是灭的
+        var flag = false;
+
+        // 2.绑定点击事件
+        light.onclick = function () {
+            // 判断如果灯是开的，则灭掉
+            if (flag) {
+                light.src = "img/off.gif";
+                flag = false;
+            } else {
+                // 如果灯是灭的，则打开
+                light.src = "img/on.gif";
+                flag = true;
+            }
+        }
+
+    </script>
+</body>
+</html>

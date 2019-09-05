@@ -150,7 +150,7 @@
 
 ## 分布式版本控制工具
 
-- [Git] **正在建设**
+- [Git](git/README.md) **未完成**
 - SVN
 
 ## Spring 家族

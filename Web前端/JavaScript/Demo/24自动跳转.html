@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+</head>
+<body>
+    <p>
+        <span id="time">5</span>秒后，自动跳转到首页...
+    </p>
+    <script>
+        /**
+         * 1.显示页面效果
+         * 2.倒计时读秒效果实现
+         *      2.1 定义一个方法，获取 span 标签，修改标签体内容
+         *      2.2 定义一个计时器，1秒后执行一次该方法
+         * 3.在方法中判断时间如果 <= 0，则跳转到首页
+         */
+
+        // 倒计时读秒效果实现
+        var second = 5;
+        var time = document.getElementById("time");
+
+        function showTime() {
+            if (second <= 0) {
+                second = 0;
+                location.href = "https://github.com/AijiangyoubuAicu/JavaInterview";
+            }
+            time.innerHTML = second + "";
+            second--;
+        }
+
+        // 设置定时器，1秒执行一次该方法
+        setInterval(showTime, 1000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on:keydown 键盘事件</title>
+    <script src="../vuejs/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text"v-on:keydown="fun2('good',$event)">
+    </div>
+    <script>
+        new Vue({
+            el:'#app', //表示当前vue对象接管了div区域
+            methods:{
+                fun2:function(msg,event){
+                    if(!
+                        ((event.keyCode>=48&&event.keyCode<=57)||event.keyCode==8||event.keyCode==46)){
+                        event.preventDefault();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

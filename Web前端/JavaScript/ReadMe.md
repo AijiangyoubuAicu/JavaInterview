@@ -846,6 +846,73 @@ length:代表形参的个数
 
 通过 js 获取元素对象，指定事件属性，设置一个函数
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+    <img id="light" src="img/off.gif" onclick="fun();" />
+    <img id="light2" src="img/off.gif" />
+
+    <script>
+        function fun() {
+            alert('我被点了');
+            alert('我又被点了');
+        }
+
+        function fun2() {
+            alert('咋老点我？');
+        }
+
+        // 1.获取 light2 对象
+        var light2 = document.getElementById("light2");
+
+        // 2.绑定点击事件
+        light2.onclick = fun2;
+
+    </script>
+</body>
+</html>
+
+```
+
+一个典型的灯泡案例，灭灯(false)点击会亮灯(true)，亮灯(true)点击会灭灯(false)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+</head>
+<body>
+    <img id="light" src="img/off.gif">
+
+    <script>
+        // 1.获取图片对象
+        var light = document.getElementById("light");
+        // 创建一个变量代表灯是灭的
+        var flag = false;
+
+        // 2.绑定点击事件
+        light.onclick = function () {
+            // 判断如果灯是开的，则灭掉
+            if (flag) {
+                light.src = "img/off.gif";
+                flag = false;
+            } else {
+                // 如果灯是灭的，则打开
+                light.src = "img/on.gif";
+                flag = true;
+            }
+        }
+
+    </script>
+</body>
+</html>
+```
 
 # BOM:
 
@@ -858,15 +925,13 @@ length:代表形参的个数
 - `History`：历史记录对象
 - `Location`：地址栏对象
 
-## Window 
-
-窗口对象
+## Window 窗口对象
 
 ### 创建 
 
-#### 方法
+### 方法
 
-与**弹出框**有关的方法：
+#### 与**弹出框**有关的方法：
 
 - `alert()`	显示带有一段消息和一个确认按钮的警告框。
 - `confirm()` 显示带有一段消息以及确认按钮和取消按钮的对话框。
@@ -874,37 +939,257 @@ length:代表形参的个数
 	- 如果用户点击取消按钮，则方法返回false
 - `prompt()` 显示可提示用户输入的对话框。
 	- 返回值：获取用户输入的值
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 窗口创建</title>
+</head>
+<body>
+    <script>
+        // alert 警告框：显示带有一段消息和一个确认按钮的警告框
+        alert("这是个警告框");
+        // 上述代码的完整，它属于 window 对象的方法之一
+        window.alert("这个警告框是完整语法的");
+
+        // confirm 确认框：显示带有一段消息以及确认按钮和取消按钮的对话框，点击确认返回 true，反之返回 false
+        var flag = confirm("您确认要退出吗？");
+        if (flag) {
+            // 点击确认时：
+            alert("欢迎再次光临！");
+        } else {
+            // 点击取消时：
+            alert("手别抖嗷....");
+        }
+
+        // prompt 输入框：显示可提示用户输入的对话框
+        var result = prompt("请输入用户名");
+        alert(result);
+
+    </script>
+</body>
+</html>
+```
 			
-与打开关闭有关的方法：
+#### 与**打开关闭**有关的方法：
 
 - `close()`	关闭浏览器窗口；谁调用我，我关谁
 - `open()` 打开一个新的浏览器窗口；返回新的Window对象
-			
-与**定时器**有关的方式：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 打开与关闭的方法</title>
+</head>
+<body>
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭窗口">
+
+    <script>
+        // 打开新窗口
+        var openBtn = document.getElementById("openBtn");
+        var newWindow;
+        openBtn.onclick = function () {
+            // open() 方法：点击后会打开对应的 URL 的网址，以一个新网址窗口的形式
+            newWindow = open("https://github.com/AijiangyoubuAicu/JavaInterview");
+        }
+
+        // 关闭新窗口
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.onclick = function () {
+            // close() 方法：关闭绑定的网址窗口
+            newWindow.close();
+        }
+
+    </script>
+</body>
+</html>
+```
+
+#### 与**定时器**有关的方式：
 
 - `setTimeout()` 在指定的毫秒数后调用函数或计算表达式
 	- 参数：1) js代码或者方法对象 2) 毫秒值 3) 返回值：唯一标识，用于取消定时器
 - `clearTimeout()` 取消由 setTimeout() 方法设置的 timeout。
 - `setInterval()` 按照指定的周期（以毫秒计）来调用函数或计算表达式。
 - `clearInterval()`	取消由 setInterval() 设置的 timeout。
-	
-### 属性：
 
-#### 获取其他BOM对象
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次性定时器</title>
+</head>
+<body>
+    <script>
+        // setTimeout()：定时器方法，在指定毫秒(参数2)后调用指定方法(参数1)
+        setTimeout("fun()", 2000);
+        // 传给一个变量
+        var id = setTimeout(fun, 2000);
 
-- `history`
-- `location`
+        // 调用的方法细节
+        function fun() {
+            // 本次方法目的是：2000毫秒后弹出一个警告框
+            alert('boom~~~~');
+        }
+
+        // setInterval()：循环定时器，即每指定毫秒(参数2)调用一次指定方法(参数1)
+        var id2 = setInterval(fun, 2000);
+        // 取消设定的定时器，如果去掉该方法，上述方法则一直循环
+        clearInterval(id2);
+    </script>
+</body>
+</html>
+```
+
+- 轮播图的简单实现
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<body>
+    <img id="img" src="img/banner_1.jpg" width="100%">
+
+    <script>
+        /**
+         * 1.在页面上使用 img 标签展示图片
+         * 2.定义一个方法，修改图片对象的 src 属性
+         * 3.定义一个定时器，每隔 3 秒钟调用一次方法
+         */
+
+        // 修改图片 src 属性
+        var number = 1;
+        function fun() {
+            number ++;
+            // 判断 number 是否大于3
+            if (number > 3) {
+                number = 1;
+            }
+            // 获取 img 对象
+            var img = document.getElementById("img");
+            img.src = "img/banner_" + number + ".jpg";
+        }
+
+        // 定义定时器，每隔 2000 毫秒调用一次方法
+        setInterval(fun, 2000);
+
+    </script>
+</body>
+</html>
+```
+
+### 属性
+
+#### 获取其他 BOM 对象
+
+- `history` 历史记录对象
+- `location` 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location 属性</title>
+</head>
+<body>
+    <input type="button" id="ptn" value="刷新">
+    <input type="button" id="btn" value="爱酱油的库">
+    <script>
+        /**
+         * reload 方法，定义一个按钮
+         * 点击按钮，刷新当前页面
+         */
+
+        // 1.获取按钮
+        var ptn = document.getElementById("ptn");
+        // 2.绑定单击事件
+        ptn.onclick = function () {
+            // 3.刷新页面
+            location.reload();
+        }
+
+        // 获取 href
+        var href = location.href;
+        // 点击按钮，去访问这个页面
+        // 1.获取按钮
+        var goItcast = document.getElementById("btn");
+        // 2.绑定单击事件
+        goItcast.onclick = function () {
+            // 3.去访问页面
+            location.href = "https://github.com/AijiangyoubuAicu/JavaInterview";
+        }
+    </script>
+</body>
+</html>
+```
+一个简单的自动跳转实现
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+</head>
+<body>
+    <p>
+        <span id="time">5</span>秒后，自动跳转到首页...
+    </p>
+    <script>
+        /**
+         * 1.显示页面效果
+         * 2.倒计时读秒效果实现
+         *      2.1 定义一个方法，获取 span 标签，修改标签体内容
+         *      2.2 定义一个计时器，1秒后执行一次该方法
+         * 3.在方法中判断时间如果 <= 0，则跳转到首页
+         */
+
+        // 倒计时读秒效果实现
+        var second = 5;
+        var time = document.getElementById("time");
+
+        function showTime() {
+            if (second <= 0) {
+                second = 0;
+                location.href = "https://github.com/AijiangyoubuAicu/JavaInterview";
+            }
+            time.innerHTML = second + "";
+            second--;
+        }
+
+        // 设置定时器，1秒执行一次该方法
+        setInterval(showTime, 1000);
+
+    </script>
+</body>
+</html>
+```
+
 - `Navigator`
 - `Screen`
-- 获取DOM对象
 
-```
-document
-```
+#### 获取 DOM 对象
+- `document`
 
-## 特点
-	        * Window对象不需要创建可以直接使用 window使用。 window.方法名();
-	        * window引用可以省略。  方法名();
+### 特点
+Window 对象不需要创建可以直接使用 window 使用<br>
+
+    window.方法名();
+
+Window 引用可以省略 方法名();
+
+
+
+
+
 
 
 	4. Location：地址栏对象

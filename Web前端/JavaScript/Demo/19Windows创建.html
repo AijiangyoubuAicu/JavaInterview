@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 窗口创建</title>
+</head>
+<body>
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭窗口">
+
+    <script>
+        // alert 警告框：显示带有一段消息和一个确认按钮的警告框
+        alert("这是个警告框");
+        // 上述代码的完整，它属于 window 对象的方法之一
+        window.alert("这个警告框是完整语法的");
+
+        // confirm 确认框：显示带有一段消息以及确认按钮和取消按钮的对话框，点击确认返回 true，反之返回 false
+        var flag = confirm("您确认要退出吗？");
+        if (flag) {
+            // 点击确认时：
+            alert("欢迎再次光临！");
+        } else {
+            // 点击取消时：
+            alert("手别抖嗷....");
+        }
+
+        // prompt 输入框：显示可提示用户输入的对话框
+        var result = prompt("请输入用户名");
+        alert(result);
+
+    </script>
+</body>
+</html>
