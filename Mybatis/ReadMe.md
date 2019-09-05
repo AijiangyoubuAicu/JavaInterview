@@ -291,10 +291,10 @@ System.out.println("用户的总数：" + rows);    // 用户的总数：6
 - 1.加载 MyBatis 全局配置文件(数据源、mapper映射文件等)，解析配置文件，MyBatis 基于 XML 配置文件生成
 `Configuration`，和一个个 MappedStatement (包括了参数映射配置、动态SQL语句、结果映射配置)，其对应着
 <select> | <updata> | <delete> | <insert> 标签项
-	
+<br>
 	
 - 2.SqlSessionFactoryBuilder 通过 Configuration 对象生成 SqlSessionFactory，用来开启 SqlSession
-
+<br>
 
 - 3.SqlSession 对象完成与数据库的交互
     - (1) 用户程序调用 mybatis 接口层 API (即 Mapper 接口中方法)
@@ -303,7 +303,7 @@ System.out.println("用户的总数：" + rows);    // 用户的总数：6
     - (4) JDBC 执行 SQL
     - (5) 借助 MappedStatement 中的结果映射关系，将返回的结果转换为 HashMap、JavaBean 等存储结构并返回
 
-
+<br>
 MyBatis层次结构：
 
 ![](src/img/MyBatis层次结构.png)
