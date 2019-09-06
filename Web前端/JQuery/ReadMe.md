@@ -1,47 +1,73 @@
-# JQuery 基础：
-	1. 概念： 一个JavaScript框架。简化JS开发
-		* jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨	是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优	化HTML文档操作、事件处理、动画设计和Ajax交互。
+# JQuery 
+## 概念
+JQuery 是一个 JavaScript 框架。简化JS开发<br>
+JQuery 是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）<br>
+JQuery 设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。
+它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。
 
-		* JavaScript框架：本质上就是一些js文件，封装了js的原生代码而已
-	2. 快速入门
-		1. 步骤：
-			1. 下载JQuery
-				* 目前jQuery有三个大版本：
-					1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，
-						 功能不再新增。因此一般项目来说，使用1.x版本就可以了，
-						 最终版本：1.12.4 (2016年5月20日)
-					2.x：不兼容ie678，很少有人使用，官方只做BUG维护，
-						 功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，
-						 最终版本：2.2.4 (2016年5月20日)
-					3.x：不兼容ie678，只支持最新的浏览器。除非特殊要求，
-						 一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。
-						 目前该版本是官方主要更新维护的版本。最新版本：3.2.1（2017年3月20日）
-				* jquery-xxx.js 与 jquery-xxx.min.js区别：
-					1. jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些
-					2. jquery-xxx.min.js：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快
+> JavaScript框架：本质上就是一些js文件，封装了js的原生代码而已
+		
+## 快速入门
+步骤：<br>
+1.下载JQuery<br>
+2. 导入JQuery的js文件：导入min.js文件<br>
+3. 使用<br>
 
-			2. 导入JQuery的js文件：导入min.js文件
-			3. 使用
-				var div1 = $("#div1");
-   				alert(div1.html());
+				
+	jquery-xxx.js 与 jquery-xxx.min.js区别：
+	1. jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些
+	2. jquery-xxx.min.js：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery 自定义框架</title>
+    <script src="../jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="div1">div1....</div>
+    <div id="div2">div2....</div>
+
+    <script>
+        /**
+         * 之前会使用 document.getElementById() 获取元素对象
+         */
+        // var div1 = document.getElementById("div1");
+        // var div2 = document.getElementById("div2");
+
+        /**
+         * 使用JQuery获取对象
+         */
+        var div1 = $("div1");
+        var div2 = $("div2");
+        alert(div1.innerHTML);
+        alert(div2.innerHTML);
+    </script>
+</body>
+</html>
+```
+
+### JQuery对象和JS对象区别与转换
+- 1.JQuery对象在操作时，更加方便。
+- 2.JQuery对象和js对象方法不通用的.
+- 3.两者相互转换
+    * jq -- > js : jq对象[索引] 或者 jq对象.get(索引)
+    * js -- > jq : $(js对象)
 
 
-	3. JQuery对象和JS对象区别与转换
-		1. JQuery对象在操作时，更加方便。
-        2. JQuery对象和js对象方法不通用的.
-        3. 两者相互转换
-            * jq -- > js : jq对象[索引] 或者 jq对象.get(索引)
-            * js -- > jq : $(js对象)
+## 选择器
 
+筛选具有相似特征的元素(标签)
 
-	4. 选择器：筛选具有相似特征的元素(标签)
+### 事件绑定
 
-		1. 基本操作学习：
-			1. 事件绑定
 				//1.获取b1按钮
 	            $("#b1").click(function(){
 	                alert("abc");
 	            });
+	            
 			2. 入口函数
 				 $(function () {
 		           

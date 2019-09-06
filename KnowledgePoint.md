@@ -118,10 +118,10 @@
 - [XML 可扩展标记语言](JavaEE/src/main/directory/XML/ReadMe.md)
 - CSS 层叠样式表
 - Bootstrap CSS库
-- [JavaScript 直译式脚本语言] **正在建设**
-- [JQuery JS库] **正在建设**
-- [Json与Ajax 同步异步JS] **正在建设**
-- [Vue 渐进式JS框架] **正在建设**
+- JavaScript 直译式脚本语言
+- JQuery JS库
+- Json与Ajax 同步异步JS
+- Vue 渐进式JS框架
 	
 ## 数据库
 
@@ -172,7 +172,7 @@
 - [Spring MVC] **正在建设**
 
 ## 分布式与微服务架构 **待建设**
-
-- [Spring Cloud] **正在建设**
+- 微服务
+    - [Spring Cloud] **正在建设**
 
 ## 中间件技术 **待建设**

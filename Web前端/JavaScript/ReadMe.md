@@ -1088,10 +1088,29 @@ length:代表形参的个数
 
 ### 属性
 
-#### 获取其他 BOM 对象
-
-- `history` 历史记录对象
+- `history` 
 - `location` 
+- `Navigator`
+- `Screen`
+- `document` 获取 BOM 对象
+
+#### window 窗口对象
+Window 对象不需要创建可以直接使用 window 使用<br>
+
+    window.方法名();
+
+Window 引用可以省略 方法名();
+
+
+#### Location：地址栏对象
+- 1.创建(获取)：
+	- 1. window.location
+	- 2. location
+
+- 2.方法：
+    -  reload()	重新加载当前文档。刷新
+- 3.属性
+    -  href	设置或返回完整的 URL。
 
 ```html
 <!DOCTYPE html>
@@ -1173,37 +1192,9 @@ length:代表形参的个数
 </html>
 ```
 
-- `Navigator`
-- `Screen`
-
-#### 获取 DOM 对象
-- `document`
-
-### 特点
-Window 对象不需要创建可以直接使用 window 使用<br>
-
-    window.方法名();
-
-Window 引用可以省略 方法名();
 
 
-
-
-
-
-
-	4. Location：地址栏对象
-		1. 创建(获取)：
-			1. window.location
-			2. location
-
-		2. 方法：
-			* reload()	重新加载当前文档。刷新
-		3. 属性
-			* href	设置或返回完整的 URL。
-
-
-	5. History：历史记录对象
+5. History：历史记录对象
         1. 创建(获取)：
             1. window.history
             2. history
@@ -1218,53 +1209,55 @@ Window 引用可以省略 方法名();
         3. 属性：
             * length	返回当前窗口历史列表中的 URL 数量。
 
-
-
-
 ## DOM：
-	* 概念： Document Object Model 文档对象模型
-		* 将标记语言文档的各个组成部分，封装为对象。可以使用这些对象，对标记语言文档进行CRUD的动态操作
+### 概念 
+Document Object Model 文档对象模型<br>
+将标记语言文档的各个组成部分，封装为对象。可以使用这些对象，对标记语言文档进行CRUD的动态操作<br>
 
-	* W3C DOM 标准被分为 3 个不同的部分：
+W3C DOM 标准被分为 3 个不同的部分：
 
-		* 核心 DOM - 针对任何结构化文档的标准模型
-			* Document：文档对象
-			* Element：元素对象
-			* Attribute：属性对象
-			* Text：文本对象
-			* Comment:注释对象
-
-			* Node：节点对象，其他5个的父对象
-		* XML DOM - 针对 XML 文档的标准模型
-		* HTML DOM - 针对 HTML 文档的标准模型
+核心 DOM - 针对任何结构化文档的标准模型<br>
+- Document：文档对象
+- Element：元素对象
+- Attribute：属性对象
+- Text：文本对象
+- Comment: 注释对象
+- Node：节点对象，其他5个的父对象
 
 
+- XML DOM - 针对 XML 文档的标准模型
+- HTML DOM - 针对 HTML 文档的标准模型
 
 
-
-	* 核心DOM模型：
-		* Document：文档对象
-			1. 创建(获取)：在html dom模型中可以使用window对象来获取
-				1. window.document
-				2. document
-			2. 方法：
-				1. 获取Element对象：
+### 核心 DOM 模型
+#### Document：文档对象
+1.创建(获取)：在html dom模型中可以使用window对象来获取<br>
+    - window.document
+    - document
+    
+    
+2. 方法：
+	1. 获取Element对象：
 					1. getElementById()	： 根据id属性值获取元素对象。id属性值一般唯一
 					2. getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组
 					3. getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组
 					4. getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组
+					
 				2. 创建其他DOM对象：
 					createAttribute(name)
                 	createComment()
                 	createElement()
                 	createTextNode()
+                	
 			3. 属性
-		* Element：元素对象
+			
+#### Element：元素对象
 			1. 获取/创建：通过document来获取和创建
 			2. 方法：
 				1. removeAttribute()：删除属性
 				2. setAttribute()：设置属性
-		* Node：节点对象，其他5个的父对象
+				
+#### Node：节点对象，其他5个的父对象
 			* 特点：所有dom对象都可以被认为是一个节点
 			* 方法：
 				* CRUD dom树：
@@ -1275,7 +1268,7 @@ Window 引用可以省略 方法名();
 				* parentNode 返回节点的父节点。
 
 
-	* HTML DOM
+### HTML DOM
 		1. 标签体的设置和获取：innerHTML
 		2. 使用html元素对象的属性
 		3. 控制元素样式
@@ -1290,14 +1283,14 @@ Window 引用可以省略 方法名();
 
 
 ## 事件监听机制：
-	* 概念：某些组件被执行了某些操作后，触发某些代码的执行。	
+* 概念：某些组件被执行了某些操作后，触发某些代码的执行。	
 		* 事件：某些操作。如： 单击，双击，键盘按下了，鼠标移动了
 		* 事件源：组件。如： 按钮 文本输入框...
 		* 监听器：代码。
 		* 注册监听：将事件，事件源，监听器结合在一起。 当事件源上发生了某个事件，则触发执行某个监听器代码。
 
 
-	* 常见的事件：
+* 常见的事件：
 		1. 点击事件：
 			1. onclick：单击事件
 			2. ondblclick：双击事件

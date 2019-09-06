@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest 入门</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="button" onclick="checkUsername()" value="检测用户名是否合法">
+    <div id="result"></div>
+    
+    <script type="text/javascript">
+        var httpRequest;
+        function checkUsername() {
+            if (window.XMLHttpRequest) {
+                // 在 IE6 以上的版本以及其他内核的浏览器等使用该对象
+                httpRequest = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                // 在 IE6 以下的版本使用该对象
+                httpRequest = new ActiveXObject();
+            }
+
+            // 创建 http 请求
+            httpRequest.open("POST", "Servlet1", true);
+            // 设置消息头
+            httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // 指定回调函数
+            httpRequest.onreadystatechange = response22;
+            // 得到文本的数据
+            var name = document.getElementById("username").value;
+
+            // 发送 http 请求，把要检测的用户名传递进去
+            httpRequest.send("username = " + name);
+        }
+
+        function response22() {
+
+            //判断请求状态码是否是4【数据接收完成】
+            if(httpRequest.readyState==4) {
+
+                //再判断状态码是否为200【200是成功的】
+                if(httpRequest.status==200) {
+
+                    //得到服务端返回的文本数据
+                    var text = httpRequest.responseText;
+
+                    //把服务端返回的数据写在div上
+                    var div = document.getElementById("result");
+                    div.innerText = text;
+                }
+
+            }
+        }
+
+    </script>
+</body>
+</html>

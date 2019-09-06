@@ -1,0 +1,28 @@
+div,span{
+    width: 180px;
+    height: 180px;
+    margin: 20px;
+    background: #9999CC;
+    border: #000 1px solid;
+    float:left;
+    font-size: 17px;
+    font-family:Roman;
+}
+
+div .mini{
+    width: 50px;
+    height: 50px;
+    background: #CC66FF;
+    border: #000 1px solid;
+    font-size: 12px;
+    font-family:Roman;
+}
+
+div .mini01{
+    width: 50px;
+    height: 50px;
+    background: #CC66FF;
+    border: #000 1px solid;
+    font-size: 12px;
+    font-family:Roman;
+}
